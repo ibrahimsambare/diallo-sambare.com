@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIALLO & SAMBARE — Cabinet d'Avocats</title>
+  <meta name="description" content="DIALLO & SAMBARE — Cabinet d'Avocats. Conseil & Contentieux." />
+  <link rel="icon" href="assets/LOGO.jpeg" sizes="32x32" />
+  <link rel="shortcut icon" href="assets/LOGO.jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--dsca-green:#002500;--dsca-sage:#929982;--dsca-peach:#EDCBB1;--dsca-ink:#0A0A0A}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans"}
+    .container{max-width:72rem;margin:0 auto;padding:0 1rem}
+    a.btn,button.btn{border-radius:1rem;padding:.75rem 1.25rem;display:inline-block}
+    .bullet li{margin-left:1rem; list-style: disc;}
+    .section-card{border-radius:1rem; border:1px solid rgba(0,0,0,.06); padding:1.25rem}
+    .hbar{height:.35rem; width:3rem; border-radius:9999px; background:var(--dsca-green);}
+  </style>
+</head>
+<body class="bg-white text-[color:var(--dsca-ink)]">
+  <header class="sticky top-0 z-40 bg-[color:var(--dsca-green)] text-white/95 shadow">
+    <div class="container py-3 flex items-center justify-between">
+      <a href="#/" class="flex items-center gap-3">
+        <img src="assets/LOGO.jpeg" alt="Logo DSCA" class="h-10 w-10 object-contain rounded" />
+        <div class="leading-tight">
+          <h1 class="text-lg md:text-xl font-semibold">DIALLO & SAMBARE</h1>
+          <p class="text-[11px] tracking-widest uppercase opacity-90">Cabinet d'Avocats</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm">
+        <a href="#/" class="hover:opacity-80">Accueil</a>
+        <a href="#/presentation" class="hover:opacity-80">Présentation</a>
+        <a href="#/competences" class="hover:opacity-80">Compétences</a>
+        <a href="#/honoraires" class="hover:opacity-80">Honoraires</a>
+        <a href="#/contact" class="hover:opacity-80">Contact</a>
+        <a href="#/rdv" class="rounded-xl px-3 py-1 bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] hover:opacity-90">Prendre RDV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="border-t border-black/5 bg-white">
+    <div class="container py-10 grid sm:grid-cols-3 gap-8">
+      <div class="flex items-center gap-3">
+        <img src="assets/LOGO.jpeg" alt="Logo DSCA" class="h-10 w-10 rounded object-contain" />
+        <div>
+          <p class="font-semibold">DIALLO & SAMBARE</p>
+          <p class="text-sm tracking-widest uppercase">Cabinet d'Avocats</p>
+        </div>
+      </div>
+      <div class="text-sm">
+        <p class="font-medium text-[color:var(--dsca-green)]">Coordonnées</p>
+        <p class="mt-2">+227 20 35 35 09</p>
+        <p>contact@diallo-sambare.com</p>
+        <p>BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001</p>
+      </div>
+      <div class="text-sm">
+        <p class="font-medium text-[color:var(--dsca-green)]">Accès rapide</p>
+        <ul class="mt-2 grid gap-1">
+          <li><a href="#/" class="hover:underline">Accueil</a></li>
+          <li><a href="#/presentation" class="hover:underline">Présentation</a></li>
+          <li><a href="#/competences" class="hover:underline">Compétences</a></li>
+          <li><a href="#/honoraires" class="hover:underline">Honoraires</a></li>
+          <li><a href="#/contact" class="hover:underline">Contact</a></li>
+          <li><a href="#/rdv" class="hover:underline">Prendre RDV</a></li>
+          <li><a href="#/cgu" class="hover:underline">CGU</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-[color:var(--dsca-green)] text-white/90 text-xs text-center py-3">© <span id="year"></span> DIALLO & SAMBARE — Tous droits réservés.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function route(){ return location.hash.replace('#','') || '/'; }
+    function mount(html){ document.getElementById('app').innerHTML = html; window.scrollTo({top:0,behavior:'smooth'}); }
+
+    function Home(){ return `<section class="relative bg-[color:var(--dsca-sage)]">
+        <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="inline-block text-xs tracking-widest uppercase text-white/80">Conseil & Contentieux</span>
+            <h2 class="mt-3 text-3xl md:text-5xl font-bold text-white leading-tight">L'expertise juridique au service de l'avantage stratégique</h2>
+            <p class="mt-4 text-white/90 max-w-prose">Maître Halima Diallo Sambare met son expertise juridique et son engagement au service de ses clients. Elle accorde une importance particulière à l’écoute et à la compréhension des besoins de chacun, afin d’apporter des conseils clairs et une stratégie adaptée à leurs besoins.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#/competences" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Nos compétences</a>
+              <a href="#/contact" class="btn bg-white text-[color:var(--dsca-green)] hover:bg-white/90">Contact rapide</a>
+              <a href="#/rdv" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Prendre RDV</a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="aspect-[4/5] w-full max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl ring-4 ring-white/30">
+              <img src="assets/halima diallo.jpg" alt="Portrait" class="h-full w-full object-cover" />
+            </div>
+            <div class="mt-4 w-full text-center">
+              <span class="inline-flex items-center gap-2 text-xl md:text-2xl bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] px-5 py-2 rounded-full shadow">
+                Maître Halima Diallo • Avocat à la Cour
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="competences" class="bg-[#F7F7F6]">
+        <div class="container py-16">
+          <div class="max-w-3xl">
+            <h3 class="text-2xl md:text-3xl font-semibold text-[color:var(--dsca-green)]">Domaines d'intervention</h3>
+            <p class="mt-4">Accédez à la page dédiée pour le détail des pôles de compétence.</p>
+          </div>
+          <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Accompagnement des entreprises et institutions</h4></div>
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Foncier & immobilier</h4></div>
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">MARD</h4></div>
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Mines et Pétrole</h4></div>
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Conformité & Gouvernance</h4></div>
+            <div class="section-card"><div class="hbar"></div><h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Droit public</h4></div>
+          </div>
+          <div class="mt-8"><a href="#/competences" class="btn bg-[color:var(--dsca-green)] text-white">Voir toutes les compétences</a></div>
+        </div>
+      </section>
+    `; }
+
+    function Presentation(){
+      return `
+      <section class="bg-white">
+        <div class="container py-16 max-w-5xl grid lg:grid-cols-3 gap-10 items-start">
+          <div class="lg:col-span-1">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow ring-4 ring-[color:var(--dsca-peach)]/60">
+              <img src="assets/halima diallo.jpg" alt="Maître Halima DIALLO SAMBARE" class="h-full w-full object-cover" />
+            </div>
+          </div>
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Présentation</h2>
+            <article class="mt-6 space-y-4 leading-relaxed text-[17px]">
+              <p>Maître Halima DIALLO SAMBARE, avocate au Barreau du Niger, est une professionnelle reconnue bénéficiant de plus de vingt ans d’expérience dans le conseil et l’assistance juridique et judiciaire.</p>
+              <p>Depuis 2007, elle est dirige le Cabinet d’Avocats SAMBARE rebaptisé DIALLO & SAMBARE Cabinet d’Avocats en 2021. Elle est basée à Niamey, où elle accompagne aussi bien des particuliers que des institutions dans des dossiers stratégiques et complexes.</p>
+              <p>Avocat-conseil de plusieurs banques, sociétés commerciales, établissement de santé et opérateurs économiques divers qu’elle accompagne en conseil et en contentieux devant les juridictions de droit commun et dans le cadre de mode alternatif de règlement des différends.</p>
+              <p>Elle a mené des missions d’envergure internationale, telles que la négociation de contrats complexes, la mise en place de partenariats public-privé, l’implantation et l’accompagnement de filiales de groupes étrangers au Niger.</p>
+              <p>Maître Halima DIALLO SAMBARE a également siégé au Conseil constitutionnel de la République du Niger, une fonction prestigieuse qu’elle a exercée avec la confiance de ses pairs.</p>
+              <p>Elle conjugue rigueur, expertise et ouverture internationale grâce à une collaboration active avec de prestigieux cabinets d’avocats étrangers (Afrique du Sud, Chine, France, Sénégal) et une excellente maîtrise du français, de l’anglais et de l’espagnol.</p>
+              <p>Maître Halima DIALLO SAMBARE est également reconnu pour son éloquence et son engagement ordinal. Elle a  été Secrétaire de la Conférence du Barreau du Niger en 2006. Elle a ensuite exercé plusieurs responsabilités au sein du Conseil de l’Ordre des Avocats du Niger, Trésorier de 2012 à 2016 et plus récemment élue au Conseil de l’Ordre de 2022 à 2025.</p>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function Competences(){
+      return `
+      <section class="bg-white">
+        <div class="container py-16 max-w-5xl">
+          <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Compétences</h2>
+          <div class="mt-10 grid lg:grid-cols-2 gap-6">
+            <div class="section-card">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Accompagnement des entreprises et institutions</h3>
+              <ul class="mt-3 bullet text-sm space-y-1">
+                <li>Droit des sociétés</li>
+                <li>Contrats commerciaux et recouvrement</li>
+                <li>Contentieux civil et commercial</li>
+                <li>Droit social et droit de la sécurité sociale</li>
+                <li>Droit bancaire et financier</li>
+                <li>Droit pénal des affaires</li>
+                <li>Droit public</li>
+              </ul>
+            </div>
+            <div class="section-card">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Foncier & immobilier</h3>
+              <ul class="mt-3 bullet text-sm space-y-1">
+                <li>Litige foncier</li>
+                <li>Conseil et contentieux en droit de l’urbanisme</li>
+                <li>Conseil et contentieux des baux d’habitation</li>
+              </ul>
+            </div>
+            <div class="section-card">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">MARD</h3>
+              <ul class="mt-3 bullet text-sm space-y-1">
+                <li>Arbitrage</li>
+                <li>Médiation</li>
+                <li>Processus collaboratif</li>
+              </ul>
+            </div>
+            <div class="section-card">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Mines et Pétrole</h3>
+              <ul class="mt-3 bullet text-sm space-y-1">
+                <li>Titres et contrats</li>
+                <li>Négociations</li>
+                <li>Partenariats public-Privé et financement de projets</li>
+              </ul>
+            </div>
+            <div class="section-card lg:col-span-2">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Conformité & Gouvernance</h3>
+              <ul class="mt-3 bullet text-sm space-y-1">
+                <li>Éthique & prévention des risques</li>
+                <li>Politiques internes</li>
+                <li>Formation & sensibilisation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function Honoraires(){ return `\
+<section class="bg-white">
+  <div class="container py-16 max-w-4xl">
+    <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Honoraires</h2>
+    <article class="prose max-w-none">
+      <p class="mt-4">Diallo & Sambare établit ses honoraires en toute transparence avec ses clients, selon la nature et la difficulté de l'affaire et du temps consacré au traitement du dossier.</p>
+
+      <p class="mt-4">Dès le premier rendez-vous et après étude préliminaire du dossier, le cabinet Diallo & Sambare proposera au client le mode de facturation adapté.</p>
+
+      <p class="mt-4">Pour préciser les modalités de fixation et de règlement des honoraires, une convention d'honoraires sera passée entre Diallo & Sambare et le client.</p>
+
+      <p class="mt-4"><b>Deux formules existent :</b></p>
+
+      <h3 class="mt-6 font-semibold text-[color:var(--dsca-green)]">L'honoraire « au temps passé » :</h3>
+      <p class="mt-2">Le montant des honoraires sera fonction du temps passé par l'avocat et de son tarif horaire. Lorsque cette formule de rémunération est adoptée, Diallo & Sambare indique à son client le nombre prévisionnel d'heures nécessaires au traitement de son dossier, et tient à sa disposition un décompte du temps consacré à son affaire.</p>
+
+      <h3 class="mt-6 font-semibold text-[color:var(--dsca-green)]">L'honoraire « au forfait » :</h3>
+      <p class="mt-2">Cette formule est généralement utilisée dans le cas où il n'existe que peu d'aléa concernant le déroulement de la procédure, permettant donc au cabinet de convenir avec son client d'un montant forfaitaire pour l'ensemble du traitement du dossier.</p>
+
+      <p class="mt-4">À noter : dès l’ouverture de votre dossier vous devrez vous acquitter des frais d’ouverture de dossier et si nécessaire, verser une provision pour couvrir les éventuels frais d'actes et de procédures.</p>
+    </article>
+    <div class="mt-8 section-card bg-[color:var(--dsca-peach)]/30">
+      <a href="#/contact" class="inline-block rounded-2xl bg-[color:var(--dsca-green)] text-white px-6 py-3">Demander un devis</a>
+    </div>
+  </div>
+</section>
+`; }
+
+    function Contact(){
+      return `
+      <section class="bg-[#F7F7F6]">
+        <div class="container py-16 grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Contact</h2>
+            <div class="mt-6 text-sm space-y-1">
+              <p>📞 +227 20 35 35 09</p>
+              <p>✉️ contact@diallo-sambare.com</p>
+              <p>🌐 www.cabinet-sambare.com</p>
+              <p>🏢 BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001</p>
+            </div>
+            <div class="mt-3">
+              <a href="https://share.google/uxnqv96puw2DDF79L" target="_blank" rel="noopener" class="inline-block rounded-xl px-4 py-2 bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] text-sm shadow hover:opacity-90">Ouvrir dans Google Maps</a>
+            </div>
+          </div>
+          <div>
+            <div class="section-card bg-white">
+              <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">Écrivez-nous</h3>
+              <form id="contactForm" class="grid grid-cols-1 gap-4 mt-4">
+                <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" />
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <label class="sr-only" for="name">Nom et prénom</label>
+                  <input id="name" name="name" required class="rounded-xl border border-black/10 px-4 py-3" placeholder="Nom et prénom" />
+                  <label class="sr-only" for="email">E‑mail</label>
+                  <input id="email" name="email" type="email" required class="rounded-xl border border-black/10 px-4 py-3" placeholder="E‑mail" />
+                </div>
+                <label class="sr-only" for="phone">Téléphone</label>
+                <input id="phone" name="phone" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Téléphone" />
+                <label class="sr-only" for="message">Votre message</label>
+                <textarea id="message" name="message" required class="rounded-2xl border border-black/10 px-4 py-3 min-h-[120px]" placeholder="Votre message"></textarea>
+                <input type="hidden" name="_subject" value="Nouveau message — diallo-sambare.com" />
+                <input type="hidden" name="site" value="https://www.diallo-sambare.com" />
+                <button class="btn bg-[color:var(--dsca-green)] text-white">Envoyer la demande</button>
+                <p id="formMsg" class="text-sm"></p>
+                <p class="text-xs opacity-70">En soumettant ce formulaire, vous acceptez d’être recontacté(e) par le cabinet.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function RDV(){
+      return `
+      <section class="bg-white">
+        <div class="container py-16 max-w-3xl">
+          <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Prendre rendez‑vous</h2>
+          <p class="mt-3">Ce formulaire ouvre une invitation Outlook adressée à <b>contact@diallo-sambare.com</b> et à votre e‑mail.</p>
+          <form id="rdvForm" class="grid gap-4 mt-6">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input id="rv_name" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Nom et prénom" required />
+              <input id="rv_email" type="email" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Votre e‑mail" required />
+            </div>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <input id="rv_date" type="date" class="rounded-xl border border-black/10 px-4 py-3" required />
+              <input id="rv_time" type="time" class="rounded-xl border border-black/10 px-4 py-3" required />
+              <select id="rv_mode" class="rounded-xl border border-black/10 px-4 py-3">
+                <option value="physique">Physique (au cabinet)</option>
+                <option value="visio">Visio (Microsoft Teams)</option>
+              </select>
+            </div>
+            <button class="btn bg-[color:var(--dsca-green)] text-white" type="submit">Ouvrir dans Outlook</button>
+            <p class="text-xs opacity-70">Aucune réservation n’est finalisée sans confirmation du cabinet.</p>
+          </form>
+        </div>
+      </section>`;
+    }
+
+    function CGU(){
+  return `\
+<section class="bg-white">
+  <div class="container py-16 max-w-4xl">
+    <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">CONDITIONS GÉNÉRALES D’UTILISATION (CGU)</h2>
+    <p class="mt-2"><b>Site :</b> www.diallo-sambare.com</p>
+
+    <div class="mt-8 space-y-6 leading-relaxed">
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">1. Objet</h3>
+        <p class="mt-2">Les présentes Conditions Générales d’Utilisation (ci-après « CGU ») ont pour objet de définir les modalités d’accès et d’utilisation du site www.diallo-sambare.com, édité par DIALLO & SAMBARE Cabinet d’Avocats, ainsi que les droits et obligations des utilisateurs.</p>
+        <p class="mt-2">En accédant et en utilisant le site www.diallo-sambare.com, l’utilisateur accepte sans réserve les présentes CGU.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">2. Définitions</h3>
+        <p class="mt-2">Conformément à la Loi n°2022-59 du 16 décembre 2022 relative à la protection des données à caractère personnel :</p>
+        <ul class="mt-2 list-disc pl-6">
+          <li>« Données à caractère personnel » : toute information se rapportant à une personne physique identifiée ou identifiable.</li>
+          <li>« Responsable du traitement » : DIALLO & SAMBARE Cabinet d’Avocats, qui détermine les finalités et moyens du traitement.</li>
+          <li>« Sous-traitant » : la personne morale ou physique qui traite des données pour le compte du Responsable du traitement.</li>
+          <li>« Personne concernée » : l’utilisateur dont les données personnelles sont collectées et traitées.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">3. Accès au site</h3>
+        <p class="mt-2">Le site www.diallo-sambare.com est accessible gratuitement [ou préciser si certaines parties sont payantes], sous réserve des frais de connexion à Internet supportés par l’utilisateur. L’éditeur se réserve le droit de restreindre, suspendre ou interrompre l’accès au site en cas de non-respect des présentes CGU.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">4. Données personnelles</h3>
+        <p class="mt-2"><b>4.1. Responsable du traitement</b><br/>Le responsable du traitement des données à caractère personnel collectées via le site www.diallo-sambare.com est :</p>
+        <p class="mt-2">DIALLO & SAMBARE Cabinet d’Avocats<br/>Adresse : [à compléter – siège social]<br/>Email : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a></p>
+        <p class="mt-2"><b>4.2. Données collectées</b><br/>Dans le cadre de l’utilisation du site www.diallo-sambare.com, les données suivantes peuvent être collectées : Nom et prénom ; Informations de contact : adresse postale, adresse électronique, numéro de téléphone. Ces données sont fournies directement par l’utilisateur lors de l’inscription, du remplissage de formulaires de contact ou de toute interaction avec le site.</p>
+        <p class="mt-2"><b>4.3. Finalités du traitement</b><br/>Les données collectées sont utilisées exclusivement pour : répondre aux demandes des utilisateurs ; permettre la mise en relation avec le Cabinet ; gérer les communications électroniques ; assurer le suivi administratif et juridique des dossiers confiés au Cabinet ; améliorer la qualité des services proposés via le site.</p>
+        <p class="mt-2"><b>4.4. Base légale du traitement</b><br/>Le traitement des données repose sur : le consentement explicite de l’utilisateur ; l’exécution d’un contrat ou d’un service demandé par l’utilisateur ; l’intérêt légitime du Cabinet, dans le respect des droits fondamentaux.</p>
+        <p class="mt-2"><b>4.5. Droits des utilisateurs</b><br/>Conformément à la Loi n°2022-59, les utilisateurs disposent des droits suivants : Droit d’accès ; Droit de rectification ; Droit d’opposition ; Droit à l’effacement (« droit à l’oubli ») ; Droit à la limitation du traitement ; Droit à la portabilité des données. Toute demande doit être adressée à : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.</p>
+        <p class="mt-2"><b>4.6. Conservation des données</b><br/>Les données personnelles sont conservées uniquement pendant la durée nécessaire à la finalité pour laquelle elles ont été collectées, sauf obligation légale de conservation plus longue.</p>
+        <p class="mt-2"><b>4.7. Sécurité des données</b><br/>Le Cabinet met en œuvre des mesures techniques et organisationnelles appropriées pour assurer la confidentialité, l’intégrité et la sécurité des données collectées.</p>
+        <p class="mt-2"><b>4.8. Autorité de contrôle</b><br/>L’utilisateur peut introduire une réclamation auprès de la Haute Autorité de Protection des Données à caractère Personnel (HAPDP) du Niger.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">5. Propriété intellectuelle</h3>
+        <p class="mt-2">Tous les contenus du site www.diallo-sambare.com (textes, images, logos, bases de données, logiciels, etc.) sont protégés par le droit d’auteur et demeurent la propriété exclusive de DIALLO & SAMBARE Cabinet d’Avocats, sauf mention contraire. Toute reproduction ou utilisation non autorisée est interdite.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">6. Obligations des utilisateurs</h3>
+        <p class="mt-2">En utilisant le site www.diallo-sambare.com, l’utilisateur s’engage à : respecter les lois et règlements en vigueur au Niger ; ne pas utiliser le site à des fins frauduleuses, illégales ou portant atteinte aux droits de tiers ; fournir des informations exactes lors de son utilisation du site.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">7. Responsabilités</h3>
+        <p class="mt-2">L’éditeur met tout en œuvre pour assurer le bon fonctionnement du site www.diallo-sambare.com, mais ne peut être tenu responsable en cas de : panne technique indépendante de sa volonté ; mauvaise utilisation par l’utilisateur ; intrusion ou attaque informatique.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">8. Modification des CGU</h3>
+        <p class="mt-2">L’éditeur se réserve le droit de modifier à tout moment les présentes CGU. L’utilisateur en sera informé par notification sur le site www.diallo-sambare.com (ou par email le cas échéant).</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">9. Loi applicable et réclamations</h3>
+        <p class="mt-2">Les présentes CGU sont régies par la législation de la République du Niger, notamment la Loi n°2022-59 du 16 décembre 2022 relative à la protection des données à caractère personnel.</p>
+        <p class="mt-2">Toute réclamation relative à l’exécution ou à l’interprétation des présentes CGU devra être adressée au préalable au Responsable du traitement, à savoir DIALLO & SAMBARE Cabinet d’Avocats, à l’adresse suivante : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.</p>
+        <p class="mt-2">À défaut de réponse dans un délai de trois (3) mois, l’utilisateur pourra saisir la Haute Autorité de Protection des Données à caractère Personnel (HAPDP).</p>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+}
+function render(){
+      const r = route();
+      if(r==='/' || r.startsWith('/#')) mount(Home());
+      else if(r==='/presentation') mount(Presentation());
+      else if(r==='/competences') mount(Competences());
+      else if(r==='/honoraires') mount(Honoraires());
+      else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
+      else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
+      else if(r==='/cgu') mount(CGU());
+      else mount(Home());
+    }
+
+    function bindContactForm(){
+      const form = document.getElementById('contactForm'); if(!form) return;
+      const msg = document.getElementById('formMsg');
+      const FORM_ID = 'xvoyrjja';
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault(); msg.textContent='Envoi…'; msg.className='text-sm';
+        try{
+          const res = await fetch('https://formspree.io/f/'+FORM_ID, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+          if(res.ok){ msg.textContent='Merci, votre message a bien été envoyé.'; msg.className='text-sm text-green-700'; form.reset(); }
+          else { msg.textContent='Une erreur est survenue.'; msg.className='text-sm text-red-700'; }
+        }catch{ msg.textContent='Impossible d\'envoyer le message pour le moment.'; msg.className='text-sm text-red-700'; }
+      });
+    }
+    function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
+    function bindRDVForm(){
+      const form = document.getElementById('rdvForm'); if(!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const email = document.getElementById('rv_email').value.trim();
+        const date = document.getElementById('rv_date').value;
+        const time = document.getElementById('rv_time').value;
+        const mode = document.getElementById('rv_mode').value;
+        if(!email || !date || !time) return;
+        const [Y,M,D] = date.split('-').map(Number);
+        const [hh,mm] = time.split(':').map(Number);
+        const start = new Date(Y, M-1, D, hh, mm);
+        const end = new Date(start.getTime() + 60*60000);
+        const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
+        const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
+        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
+        const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
+        const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
+          + '&subject=' + subject
+          + '&startdt=' + encodeURIComponent(toISOUTC(start))
+          + '&enddt=' + encodeURIComponent(toISOUTC(end))
+          + '&body=' + body
+          + '&location=' + location
+          + '&to=' + attendees;
+        window.open(url, '_blank');
+      });
+    }
+
+    window.addEventListener('hashchange', render);
+    render();
+  </script>
+</body>
+</html>
