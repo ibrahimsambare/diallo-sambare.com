@@ -121,29 +121,39 @@
       </section>
     `; }
 
-    function Presentation(){
-      return `
-      <section class="bg-white">
-        <div class="container py-16 max-w-5xl grid lg:grid-cols-3 gap-10 items-start">
-          <div class="lg:col-span-1">
-            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow ring-4 ring-[color:var(--dsca-peach)]/60">
-              <img src="assets/halima diallo.jpg" alt="Maître Halima DIALLO SAMBARE" class="h-full w-full object-cover" />
-            </div>
-          </div>
-          <div class="lg:col-span-2">
-            <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Présentation</h2>
-            <article class="mt-6 space-y-4 leading-relaxed text-[17px]">
-              <p>Maître Halima DIALLO SAMBARE, avocate au Barreau du Niger, est une professionnelle reconnue bénéficiant de plus de vingt ans d’expérience dans le conseil et l’assistance juridique et judiciaire.</p>
-              <p>Depuis 2007, elle est dirige le Cabinet d’Avocats SAMBARE rebaptisé DIALLO & SAMBARE Cabinet d’Avocats en 2021. Elle est basée à Niamey, où elle accompagne aussi bien des particuliers que des institutions dans des dossiers stratégiques et complexes.</p>
-              <p>Avocat-conseil de plusieurs banques, sociétés commerciales, établissement de santé et opérateurs économiques divers qu’elle accompagne en conseil et en contentieux devant les juridictions de droit commun et dans le cadre de mode alternatif de règlement des différends.</p>
-              <p>Elle a mené des missions d’envergure internationale, telles que la négociation de contrats complexes, la mise en place de partenariats public-privé, l’implantation et l’accompagnement de filiales de groupes étrangers au Niger.</p>
-              <p>Maître Halima DIALLO SAMBARE a également siégé au Conseil constitutionnel de la République du Niger, une fonction prestigieuse qu’elle a exercée avec la confiance de ses pairs.</p>
-              <p>Elle conjugue rigueur, expertise et ouverture internationale grâce à une collaboration active avec de prestigieux cabinets d’avocats étrangers (Afrique du Sud, Chine, France, Sénégal) et une excellente maîtrise du français, de l’anglais et de l’espagnol.</p>
-              <p>Maître Halima DIALLO SAMBARE est également reconnu pour son éloquence et son engagement ordinal. Elle a  été Secrétaire de la Conférence du Barreau du Niger en 2006. Elle a ensuite exercé plusieurs responsabilités au sein du Conseil de l’Ordre des Avocats du Niger, Trésorier de 2012 à 2016 et plus récemment élue au Conseil de l’Ordre de 2022 à 2025.</p>
-          </div>
+  function Presentation(){
+  return `
+  <section class="bg-white">
+    <div class="container py-16 max-w-5xl grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-1">
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow ring-4 ring-[color:var(--dsca-peach)]/60">
+          <img src="assets/halima diallo.jpg" alt="Maître Halima DIALLO SAMBARE" class="h-full w-full object-cover" />
         </div>
-      </section>`;
-    }
+      </div>
+
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Présentation</h2>
+
+        <article class="mt-6 space-y-4 leading-relaxed text-[17px]">
+          <p>Maître Halima DIALLO SAMBARE, avocate au Barreau du Niger, est une professionnelle reconnue bénéficiant de plus de vingt ans d’expérience dans le conseil et l’assistance juridique et judiciaire.</p>
+
+          <p>Depuis 2007, elle dirige le Cabinet d’Avocats SAMBARE, rebaptisé DIALLO & SAMBARE Cabinet d’Avocats en 2021. Elle est basée à Niamey, où elle accompagne aussi bien des particuliers que des institutions dans des dossiers stratégiques et complexes.</p>
+
+          <p>Avocate-conseil de plusieurs banques, sociétés commerciales, établissements de santé et opérateurs économiques divers, elle intervient en conseil et en contentieux devant les juridictions de droit commun, ainsi que dans le cadre des modes alternatifs de règlement des différends.</p>
+
+          <p>Elle a mené des missions d’envergure internationale, telles que la négociation de contrats complexes, la mise en place de partenariats public-privé, et l’implantation ainsi que l’accompagnement de filiales de groupes étrangers au Niger.</p>
+
+          <p>Maître Halima DIALLO SAMBARE a également siégé au Conseil constitutionnel de la République du Niger, une fonction prestigieuse qu’elle a exercée avec la confiance de ses pairs.</p>
+
+          <p>Elle conjugue rigueur, expertise et ouverture internationale grâce à une collaboration active avec de prestigieux cabinets d’avocats étrangers (Afrique du Sud, Chine, France, Sénégal) et une excellente maîtrise du français, de l’anglais et de l’espagnol.</p>
+
+          <p>Maître Halima DIALLO SAMBARE est également reconnue pour son éloquence et son engagement ordinal. Elle a été Secrétaire de la Conférence du Barreau du Niger en 2006. Elle a ensuite exercé plusieurs responsabilités au sein du Conseil de l’Ordre des Avocats du Niger : Trésorière de 2012 à 2016, puis élue au Conseil de l’Ordre de 2022 à 2025.</p>
+        </article>
+      </div>
+    </div>
+  </section>`;
+  }
+
 
     function Competences(){
       return `
@@ -176,6 +186,7 @@
             <div class="section-card">
               <div class="hbar"></div>
               <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">MARD</h3>
+              <p class="mt-2 text-sm opacity-80">Médiation • Arbitrage • Processus collaboratif</p>
               <ul class="mt-3 bullet text-sm space-y-1">
                 <li>Arbitrage</li>
                 <li>Médiation</li>
@@ -242,7 +253,7 @@
             <div class="mt-6 text-sm space-y-1">
               <p>📞 +227 20 35 35 09</p>
               <p>✉️ contact@diallo-sambare.com</p>
-              <p>🌐 www.cabinet-sambare.com</p>
+              <p>🌐 <a class="underline" href="https://www.cabinet-sambare.com" target="_blank" rel="noopener">www.cabinet-sambare.com</a></p>
               <p>🏢 BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001</p>
             </div>
             <div class="mt-3">
@@ -253,7 +264,7 @@
             <div class="section-card bg-white">
               <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">Écrivez-nous</h3>
               <form id="contactForm" class="grid grid-cols-1 gap-4 mt-4">
-                <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" />
+                <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <div class="grid sm:grid-cols-2 gap-4">
                   <label class="sr-only" for="name">Nom et prénom</label>
                   <input id="name" name="name" required class="rounded-xl border border-black/10 px-4 py-3" placeholder="Nom et prénom" />
