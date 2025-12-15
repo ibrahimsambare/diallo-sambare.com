@@ -73,9 +73,12 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function route(){ return location.hash.replace('#','') || '/'; }
-    function mount(html){ document.getElementById('app').innerHTML = html; window.scrollTo({top:0,behavior:'smooth'}); }
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function route(){ return location.hash.replace('#','') || '/'; }
+  function mount(html){
+    document.getElementById('app').innerHTML = html;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
 
     function Home(){ return `<section class="relative bg-[color:var(--dsca-sage)]">
         <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
@@ -121,6 +124,7 @@
       </section>
     `; }
 
+    
   function Presentation(){
   return `
   <section class="bg-white">
@@ -216,6 +220,7 @@
       </section>`;
     }
 
+    
     function Honoraires(){ return `\
 <section class="bg-white">
   <div class="container py-16 max-w-4xl">
@@ -244,6 +249,7 @@
 </section>
 `; }
 
+    
     function Contact(){
       return `
       <section class="bg-[#F7F7F6]">
@@ -287,6 +293,7 @@
       </section>`;
     }
 
+    
     function RDV(){
       return `
       <section class="bg-white">
@@ -313,6 +320,7 @@
       </section>`;
     }
 
+    
     function CGU(){
   return `\
 <section class="bg-white">
@@ -387,56 +395,93 @@
 </section>
 `;
 }
+
+    
 function render(){
-  const r = route();
-  if(r==='/' || r.startsWith('/#')) mount(Home());
-  else if(r==='/presentation') mount(Presentation());
-  else if(r==='/competences') mount(Competences());
-  else if(r==='/honoraires') mount(Honoraires());
-  else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
-  else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
-  else if(r==='/cgu') mount(CGU());
-  else mount(Home());
-} // ✅ <- cette accolade manquait
+    const r = route();
+    if(r==='/' || r.startsWith('/#')) mount(Home());
+    else if(r==='/presentation') mount(Presentation());
+    else if(r==='/competences') mount(Competences());
+    else if(r==='/honoraires') mount(Honoraires());
+    else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
+    else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
+    else if(r==='/cgu') mount(CGU());
+    else mount(Home());
+  }
 
-function bindContactForm(){
-  const form = document.getElementById('contactForm');
-  if(!form) return;
+  function bindContactForm(){
+    const form = document.getElementById('contactForm');
+    if(!form) return;
 
-  const msg = document.getElementById('formMsg');
-  const FORM_ID = 'mgvgqdpl';
+    const msg = document.getElementById('formMsg');
+    const FORM_ID = 'mgvgqdpl';
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    msg.textContent = 'Envoi…';
-    msg.className = 'text-sm';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = 'Envoi…';
+      msg.className = 'text-sm';
 
-    try {
-      const res = await fetch('https://formspree.io/f/mgvgqdpl', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+      try {
+        const res = await fetch('https://formspree.io/f/mgvgqdpl', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
 
-      if (res.ok) {
-        msg.textContent = 'Merci, votre message a bien été envoyé.';
-        msg.className = 'text-sm text-green-700';
-        form.reset();
-      } else {
-        const data = await res.json().catch(() => null);
-        msg.textContent = data?.error || 'Une erreur est survenue.';
-        msg.className = 'text-sm text-red-700';
+        if (res.ok) {
+          msg.textContent = 'Merci, votre message a bien été envoyé.';
+          msg.className = 'text-sm text-green-700';
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => null);
+          msg.textContent = data?.error || 'Une erreur est survenue.';
+          msg.className = 'text-sm text-red-700';
+        }
+      } catch (err) {
+        form.submit(); // fallback HTML
       }
-    } catch (err) {
-      form.submit();
-    }
-  });
-}
+    });
+  }
 
-function toISOUTC(d){
-  const p=n=>String(n).padStart(2,'0');
-  return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
-}
+  function toISOUTC(d){
+    const p = n => String(n).padStart(2,'0');
+    return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
+  }
 
-window.addEventListener('hashchange', render);
-render();
+  function bindRDVForm(){
+    const form = document.getElementById('rdvForm');
+    if(!form) return;
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('rv_email').value.trim();
+      const date = document.getElementById('rv_date').value;
+      const time = document.getElementById('rv_time').value;
+      const mode = document.getElementById('rv_mode').value;
+      if(!email || !date || !time) return;
+
+      const [Y,M,D] = date.split('-').map(Number);
+      const [hh,mm] = time.split(':').map(Number);
+      const start = new Date(Y, M-1, D, hh, mm);
+      const end = new Date(start.getTime() + 60*60000);
+
+      const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
+      const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
+      const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
+      const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
+
+      const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
+        + '&subject=' + subject
+        + '&startdt=' + encodeURIComponent(toISOUTC(start))
+        + '&enddt=' + encodeURIComponent(toISOUTC(end))
+        + '&body=' + body
+        + '&location=' + location
+        + '&to=' + attendees;
+
+      window.open(url, '_blank');
+    });
+  }
+
+  window.addEventListener('hashchange', render);
+  render();
+</script>
