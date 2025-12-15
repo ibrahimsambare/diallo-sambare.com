@@ -89,6 +89,27 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.10);
       }
     
+      /* Reveal gauche -> droite (wipe) déclenché quand .is-visible est ajouté */
+      .wipe {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        clip-path: inset(0 100% 0 0); /* caché */
+      }
+      
+      .wipe.is-visible {
+        animation: wipeIn 0.9s ease-out forwards;
+      }
+      
+      @keyframes wipeIn {
+        to { clip-path: inset(0 0 0 0); }
+      }
+      
+      /* Delays simples (pour enchaîner les lignes) */
+      .d1 { animation-delay: .05s; }
+      .d2 { animation-delay: .18s; }
+      .d3 { animation-delay: .32s; }
+    
   </style>
 </head>
 
@@ -245,82 +266,123 @@
     function Home()
     { 
       return `
-      <section class="relative bg-[color:var(--dsca-sage)]">
-    
-        <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
-    
-          <!-- TEXTE GAUCHE -->
-          <div>
-    
-            <span class="reveal inline-block text-[0.7rem] tracking-[0.25em] uppercase text-white/70">
-              Conseil & Contentieux
-            </span>
-            
-            <h2 class="reveal mt-4 font-serif text-3xl md:text-5xl font-semibold text-white leading-[1.05]">
-              L’expertise juridique<br>
-              <em class="italic font-normal">au service de l’avantage stratégique</em>
-            </h2>
-            
-            <p class="reveal mt-5 text-white/85 max-w-prose leading-relaxed">
-              Maître Halima Diallo Sambare met son expertise juridique et son engagement
-              au service de ses clients. Elle accorde une importance particulière à
-              l’écoute et à la compréhension des besoins de chacun, afin d’apporter des
-              conseils clairs et une stratégie adaptée à leurs besoins.
-            </p>
-            
-            <div class="reveal mt-8 flex flex-wrap gap-4 items-center">
-    
-              <a href="#/rdv"
-                 class="btn hover-lift bg-[color:var(--dsca-peach)] text-[color:var(--dsca-green)]
-                        font-medium hover:opacity-90 transition">
-                Prendre RDV
-              </a>
-            
-              <a href="#/contact"
-                 class="btn hover-lift border border-white/60 text-white
-                        hover:bg-white hover:text-[color:var(--dsca-green)]
-                        transition">
-                Contact rapide
-              </a>
-            
-              <a href="#/competences"
-                 class="text-white/80 underline underline-offset-4
-                        hover:text-white transition">
-                Nos compétences
-              </a>
-    
+      <section class="relative bg-[color:var(--dsca-sage)] overflow-hidden">
+        <!-- TRACK -->
+        <div id="homeSlider" class="flex transition-transform duration-700 ease-in-out">
+      
+          <!-- ===================== SLIDE 1 : TEXTE + BOUTONS ===================== -->
+          <div class="min-w-full">
+            <div class="container py-16 min-h-[520px] flex items-center">
+              <div class="w-full max-w-4xl">
+      
+                <span class="reveal inline-block text-[0.75rem] tracking-[0.25em] uppercase text-white/70">
+                  Conseil & Contentieux
+                </span>
+      
+                <!-- TITRE très grand + wipe gauche->droite -->
+                <h1 class="mt-5 font-serif text-5xl md:text-7xl font-semibold text-white leading-[1.03]">
+                  <span class="wipe reveal d1">L’expertise juridique</span><br>
+                  <em class="wipe reveal d2 italic font-normal">au service de l’avantage stratégique</em>
+                </h1>
+      
+                <!-- CTA -->
+                <div class="reveal mt-10 flex flex-wrap gap-4 items-center">
+                  <a href="#/rdv"
+                    class="btn hover-lift bg-[color:var(--dsca-peach)] text-[color:var(--dsca-green)]
+                           font-medium hover:opacity-90 transition">
+                    Prendre RDV
+                  </a>
+      
+                  <a href="#/contact"
+                    class="btn hover-lift border border-white/60 text-white
+                           hover:bg-white hover:text-[color:var(--dsca-green)]
+                           transition">
+                    Contact rapide
+                  </a>
+      
+                  <a href="#/competences"
+                    class="text-white/80 underline underline-offset-4 hover:text-white transition">
+                    Nos compétences
+                  </a>
+                </div>
+      
+              </div>
             </div>
           </div>
-    
-          <!-- PHOTO DROITE -->
-          <div class="relative flex flex-col items-center">
-    
-            <div class="reveal aspect-[4/5] w-full max-w-sm md:max-w-md
-                        rounded-2xl overflow-hidden
-                        shadow-2xl ring-2 ring-white/40
-                        bg-white/10 backdrop-blur-sm">
-              <img
-                src="assets/halima diallo.svg"
-                alt="Maître Halima Diallo Sambare"
-                class="h-full w-full object-cover"
-              />
+      
+          <!-- ===================== SLIDE 2 : PHOTO + TEXTE ===================== -->
+          <div class="min-w-full">
+            <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
+      
+              <!-- TEXTE -->
+              <div>
+                <span class="reveal inline-block text-[0.75rem] tracking-[0.25em] uppercase text-white/70">
+                  Présentation
+                </span>
+      
+                <p class="reveal mt-6 text-white/85 max-w-prose leading-relaxed text-base md:text-lg">
+                  Maître Halima Diallo Sambare met son expertise juridique et son engagement
+                  au service de ses clients. Elle accorde une importance particulière à
+                  l’écoute et à la compréhension des besoins de chacun, afin d’apporter des
+                  conseils clairs et une stratégie adaptée à leurs besoins.
+                </p>
+      
+                <div class="reveal mt-8">
+                  <a href="#/contact"
+                    class="btn hover-lift bg-white/10 border border-white/30 text-white hover:bg-white/20 transition">
+                    Prendre contact
+                  </a>
+                </div>
+              </div>
+      
+              <!-- PHOTO -->
+              <div class="relative flex flex-col items-center">
+                <div class="reveal aspect-[4/5] w-full max-w-sm md:max-w-md
+                            rounded-2xl overflow-hidden
+                            shadow-2xl ring-2 ring-white/40
+                            bg-white/10 backdrop-blur-sm">
+                  <img
+                    src="assets/halima diallo.svg"
+                    alt="Maître Halima Diallo Sambare"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+      
+                <div class="reveal mt-6">
+                  <span class="inline-flex items-center gap-2
+                               text-base md:text-lg font-serif
+                               bg-[color:var(--dsca-peach)]
+                               text-[color:var(--dsca-ink)]
+                               px-6 py-2.5 rounded-full shadow-md tracking-wide">
+                    Maître Halima Diallo • Avocat à la Cour
+                  </span>
+                </div>
+              </div>
+      
             </div>
-    
-            <div class="reveal mt-6">
-              <span class="inline-flex items-center gap-2
-                           text-base md:text-lg
-                           font-serif
-                           bg-[color:var(--dsca-peach)]
-                           text-[color:var(--dsca-ink)]
-                           px-6 py-2.5
-                           rounded-full
-                           shadow-md
-                           tracking-wide">
-                Maître Halima Diallo • Avocat à la Cour
-              </span>
-            </div>
-            
           </div>
+      
+        </div>
+      
+        <!-- FLÈCHES -->
+        <button type="button" onclick="prevHomeSlide()"
+          class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2
+                 h-12 w-12 rounded-full border border-white/40 bg-white/10
+                 text-white text-3xl leading-none hover:bg-white/20 transition">
+          ‹
+        </button>
+      
+        <button type="button" onclick="nextHomeSlide()"
+          class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2
+                 h-12 w-12 rounded-full border border-white/40 bg-white/10
+                 text-white text-3xl leading-none hover:bg-white/20 transition">
+          ›
+        </button>
+      
+        <!-- DOTS -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          <button type="button" onclick="goHomeSlide(0)" class="homeDot h-2.5 w-2.5 rounded-full bg-white/70"></button>
+          <button type="button" onclick="goHomeSlide(1)" class="homeDot h-2.5 w-2.5 rounded-full bg-white/40"></button>
         </div>
       </section>
 
@@ -1145,6 +1207,44 @@
       }, { threshold: 0.12 });
   
     revealEls.forEach(el => io.observe(el));
+
+    let homeSlideIndex = 0;
+  
+    function updateHomeSlider()
+    {
+      const slider = document.getElementById('homeSlider');
+      if (!slider) return;
+  
+      slider.style.transform = `translateX(-${homeSlideIndex * 100}%)`;
+  
+      // dots
+      const dots = document.querySelectorAll('.homeDot');
+      dots.forEach((d,i)=>{
+        d.classList.toggle('bg-white/70', i === homeSlideIndex);
+        d.classList.toggle('bg-white/40', i !== homeSlideIndex);
+      });
+  
+      // relance les reveals (important si ton contenu est rendu en JS / hash routes)
+      if (typeof initReveals === "function") initReveals();
+    }
+  
+    function nextHomeSlide()
+    {
+      homeSlideIndex = (homeSlideIndex + 1) % 2;
+      updateHomeSlider();
+    }
+    
+    function prevHomeSlide()
+    {
+      homeSlideIndex = (homeSlideIndex - 1 + 2) % 2;
+      updateHomeSlider();
+    }
+    
+    function goHomeSlide(i)
+    {
+      homeSlideIndex = i;
+      updateHomeSlider();
+    }
     
 </script>
 </body>  
