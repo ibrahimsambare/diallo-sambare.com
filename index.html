@@ -700,211 +700,350 @@
       </section>`;
     }
 
-    function RDV(){
+    function RDV()
+    {
       return `
-      <section class="bg-white">
+      <section class="bg-white" id="rdv">
         <div class="container py-16 max-w-3xl">
-          <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Prendre rendez‑vous</h2>
-          <p class="mt-3">Ce formulaire ouvre une invitation Outlook adressée à <b>contact@diallo-sambare.com</b> et à votre e‑mail.</p>
-          <form id="rdvForm" class="grid gap-4 mt-6">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <input id="rv_name" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Nom et prénom" required />
-              <input id="rv_email" type="email" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Votre e‑mail" required />
-            </div>
-            <div class="grid sm:grid-cols-3 gap-4">
-              <input id="rv_date" type="date" class="rounded-xl border border-black/10 px-4 py-3" required />
-              <input id="rv_time" type="time" class="rounded-xl border border-black/10 px-4 py-3" required />
-              <select id="rv_mode" class="rounded-xl border border-black/10 px-4 py-3">
-                <option value="physique">Physique (au cabinet)</option>
-                <option value="visio">Visio (Microsoft Teams)</option>
-              </select>
-            </div>
-            <button class="btn bg-[color:var(--dsca-green)] text-white" type="submit">Ouvrir dans Outlook</button>
-            <p class="text-xs opacity-70">Aucune réservation n’est finalisée sans confirmation du cabinet.</p>
-          </form>
+    
+          <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+            Rendez-vous
+          </span>
+    
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+            Prendre rendez-vous
+          </h2>
+    
+          <p class="mt-4 text-black/70 leading-relaxed">
+            Ce formulaire ouvre une invitation Outlook adressée à
+            <span class="font-medium text-black/80">contact@diallo-sambare.com</span> et à votre e-mail.
+          </p>
+    
+          <div class="mt-8 section-card bg-[#F7F7F6]">
+            <form id="rdvForm" class="grid gap-4">
+    
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input id="rv_name" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]"
+                       placeholder="Nom et prénom" />
+    
+                <input id="rv_email" type="email" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]"
+                       placeholder="Votre e-mail" />
+              </div>
+    
+              <div class="grid sm:grid-cols-3 gap-4">
+                <input id="rv_date" type="date" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]" />
+    
+                <input id="rv_time" type="time" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]" />
+    
+                <select id="rv_mode"
+                        class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]">
+                  <option value="physique">Physique (au cabinet)</option>
+                  <option value="visio">Visio (Microsoft Teams)</option>
+                </select>
+              </div>
+    
+              <button class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90 transition" type="submit">
+                Ouvrir dans Outlook
+              </button>
+    
+              <p class="text-xs text-black/60">
+                Aucune réservation n’est finalisée sans confirmation du cabinet.
+              </p>
+            </form>
+          </div>
+    
         </div>
       </section>`;
     }
 
+
+    function CGU()
+    {
+      return `
+    <section class="bg-white">
+      <div class="container py-16 max-w-4xl">
     
-    function CGU(){
-  return `\
-<section class="bg-white">
-  <div class="container py-16 max-w-4xl">
-    <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">CONDITIONS GÉNÉRALES D’UTILISATION (CGU)</h2>
-    <p class="mt-2"><b>Site :</b> www.diallo-sambare.com</p>
-
-    <div class="mt-8 space-y-6 leading-relaxed">
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">1. Objet</h3>
-        <p class="mt-2">Les présentes Conditions Générales d’Utilisation (ci-après « CGU ») ont pour objet de définir les modalités d’accès et d’utilisation du site www.diallo-sambare.com, édité par DIALLO & SAMBARE Cabinet d’Avocats, ainsi que les droits et obligations des utilisateurs.</p>
-        <p class="mt-2">En accédant et en utilisant le site www.diallo-sambare.com, l’utilisateur accepte sans réserve les présentes CGU.</p>
+        <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+          Informations légales
+        </span>
+    
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+          Conditions Générales d’Utilisation (CGU)
+        </h2>
+    
+        <p class="mt-2 text-sm text-black/70">
+          <b>Site :</b> www.diallo-sambare.com
+        </p>
+    
+        <div class="mt-10 space-y-8 leading-relaxed text-[15.5px] text-black/80">
+    
+          <!-- 1. Objet -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">1. Objet</h3>
+            <p class="mt-2">
+              Les présentes Conditions Générales d’Utilisation (ci-après « CGU ») ont pour objet
+              de définir les modalités d’accès et d’utilisation du site www.diallo-sambare.com,
+              édité par DIALLO & SAMBARE Cabinet d’Avocats, ainsi que les droits et obligations
+              des utilisateurs.
+            </p>
+            <p class="mt-2">
+              En accédant et en utilisant le site www.diallo-sambare.com, l’utilisateur accepte
+              sans réserve les présentes CGU.
+            </p>
+          </section>
+    
+          <!-- 2. Définitions -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">2. Définitions</h3>
+            <p class="mt-2">
+              Conformément à la Loi n°2022-59 du 16 décembre 2022 relative à la protection des
+              données à caractère personnel :
+            </p>
+            <ul class="mt-2 list-disc pl-6 space-y-1">
+              <li>« Données à caractère personnel » : toute information se rapportant à une personne physique identifiée ou identifiable.</li>
+              <li>« Responsable du traitement » : DIALLO & SAMBARE Cabinet d’Avocats.</li>
+              <li>« Sous-traitant » : toute personne traitant des données pour le compte du responsable.</li>
+              <li>« Personne concernée » : l’utilisateur dont les données sont collectées.</li>
+            </ul>
+          </section>
+    
+          <!-- 3. Accès -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">3. Accès au site</h3>
+            <p class="mt-2">
+              Le site www.diallo-sambare.com est accessible gratuitement, sous réserve des frais
+              de connexion à Internet supportés par l’utilisateur.
+            </p>
+            <p class="mt-2">
+              L’éditeur se réserve le droit de suspendre ou restreindre l’accès au site en cas
+              de non-respect des présentes CGU.
+            </p>
+          </section>
+    
+          <!-- 4. Données personnelles -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">4. Données personnelles</h3>
+    
+            <p class="mt-2 font-medium">4.1 Responsable du traitement</p>
+            <p class="mt-2">
+              DIALLO & SAMBARE Cabinet d’Avocats<br/>
+              BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001<br/>
+              Email : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>
+            </p>
+    
+            <p class="mt-4 font-medium">4.2 Données collectées</p>
+            <p class="mt-2">
+              Nom et prénom, coordonnées postales, adresse électronique, numéro de téléphone,
+              fournis volontairement par l’utilisateur via les formulaires du site.
+            </p>
+    
+            <p class="mt-4 font-medium">4.3 Finalités</p>
+            <p class="mt-2">
+              Réponse aux demandes, mise en relation avec le Cabinet, suivi administratif et
+              juridique, amélioration des services.
+            </p>
+    
+            <p class="mt-4 font-medium">4.4 Base légale</p>
+            <p class="mt-2">
+              Consentement de l’utilisateur, exécution d’un service demandé, intérêt légitime
+              du Cabinet.
+            </p>
+    
+            <p class="mt-4 font-medium">4.5 Droits des utilisateurs</p>
+            <p class="mt-2">
+              Droit d’accès, de rectification, d’opposition, d’effacement, de limitation et de
+              portabilité, à exercer par email à
+              <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.
+            </p>
+    
+            <p class="mt-4 font-medium">4.6 Conservation</p>
+            <p class="mt-2">
+              Les données sont conservées pendant la durée strictement nécessaire aux finalités
+              poursuivies, sauf obligation légale.
+            </p>
+    
+            <p class="mt-4 font-medium">4.7 Sécurité</p>
+            <p class="mt-2">
+              Des mesures techniques et organisationnelles appropriées sont mises en œuvre pour
+              garantir la sécurité et la confidentialité des données.
+            </p>
+    
+            <p class="mt-4 font-medium">4.8 Autorité de contrôle</p>
+            <p class="mt-2">
+              L’utilisateur peut saisir la Haute Autorité de Protection des Données à caractère
+              Personnel (HAPDP) du Niger.
+            </p>
+          </section>
+    
+          <!-- 5. Propriété intellectuelle -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">5. Propriété intellectuelle</h3>
+            <p class="mt-2">
+              L’ensemble des contenus du site est protégé par le droit d’auteur et demeure la
+              propriété exclusive de DIALLO & SAMBARE Cabinet d’Avocats.
+            </p>
+          </section>
+    
+          <!-- 6. Obligations -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">6. Obligations des utilisateurs</h3>
+            <p class="mt-2">
+              L’utilisateur s’engage à respecter la législation en vigueur, à ne pas utiliser
+              le site à des fins illicites et à fournir des informations exactes.
+            </p>
+          </section>
+    
+          <!-- 7. Responsabilité -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">7. Responsabilité</h3>
+            <p class="mt-2">
+              Le Cabinet ne saurait être tenu responsable en cas de dysfonctionnement technique,
+              d’usage inapproprié ou d’attaque informatique indépendante de sa volonté.
+            </p>
+          </section>
+    
+          <!-- 8. Modification -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">8. Modification des CGU</h3>
+            <p class="mt-2">
+              Les présentes CGU peuvent être modifiées à tout moment. Les utilisateurs sont
+              invités à les consulter régulièrement.
+            </p>
+          </section>
+    
+          <!-- 9. Loi applicable -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">9. Loi applicable et réclamations</h3>
+            <p class="mt-2">
+              Les CGU sont régies par la législation de la République du Niger.
+            </p>
+            <p class="mt-2">
+              Toute réclamation devra être adressée à
+              <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.
+            </p>
+          </section>
+    
+        </div>
       </div>
+    </section>
+    `;
+    }
 
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">2. Définitions</h3>
-        <p class="mt-2">Conformément à la Loi n°2022-59 du 16 décembre 2022 relative à la protection des données à caractère personnel :</p>
-        <ul class="mt-2 list-disc pl-6">
-          <li>« Données à caractère personnel » : toute information se rapportant à une personne physique identifiée ou identifiable.</li>
-          <li>« Responsable du traitement » : DIALLO & SAMBARE Cabinet d’Avocats, qui détermine les finalités et moyens du traitement.</li>
-          <li>« Sous-traitant » : la personne morale ou physique qui traite des données pour le compte du Responsable du traitement.</li>
-          <li>« Personne concernée » : l’utilisateur dont les données personnelles sont collectées et traitées.</li>
-        </ul>
-      </div>
 
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">3. Accès au site</h3>
-        <p class="mt-2">Le site www.diallo-sambare.com est accessible gratuitement [ou préciser si certaines parties sont payantes], sous réserve des frais de connexion à Internet supportés par l’utilisateur. L’éditeur se réserve le droit de restreindre, suspendre ou interrompre l’accès au site en cas de non-respect des présentes CGU.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">4. Données personnelles</h3>
-        <p class="mt-2"><b>4.1. Responsable du traitement</b><br/>Le responsable du traitement des données à caractère personnel collectées via le site www.diallo-sambare.com est :</p>
-        <p class="mt-2">DIALLO & SAMBARE Cabinet d’Avocats<br/>Adresse : BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001 <br/>Email : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a></p>
-        <p class="mt-2"><b>4.2. Données collectées</b><br/>Dans le cadre de l’utilisation du site www.diallo-sambare.com, les données suivantes peuvent être collectées : Nom et prénom ; Informations de contact : adresse postale, adresse électronique, numéro de téléphone. Ces données sont fournies directement par l’utilisateur lors de l’inscription, du remplissage de formulaires de contact ou de toute interaction avec le site.</p>
-        <p class="mt-2"><b>4.3. Finalités du traitement</b><br/>Les données collectées sont utilisées exclusivement pour : répondre aux demandes des utilisateurs ; permettre la mise en relation avec le Cabinet ; gérer les communications électroniques ; assurer le suivi administratif et juridique des dossiers confiés au Cabinet ; améliorer la qualité des services proposés via le site.</p>
-        <p class="mt-2"><b>4.4. Base légale du traitement</b><br/>Le traitement des données repose sur : le consentement explicite de l’utilisateur ; l’exécution d’un contrat ou d’un service demandé par l’utilisateur ; l’intérêt légitime du Cabinet, dans le respect des droits fondamentaux.</p>
-        <p class="mt-2"><b>4.5. Droits des utilisateurs</b><br/>Conformément à la Loi n°2022-59, les utilisateurs disposent des droits suivants : Droit d’accès ; Droit de rectification ; Droit d’opposition ; Droit à l’effacement (« droit à l’oubli ») ; Droit à la limitation du traitement ; Droit à la portabilité des données. Toute demande doit être adressée à : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.</p>
-        <p class="mt-2"><b>4.6. Conservation des données</b><br/>Les données personnelles sont conservées uniquement pendant la durée nécessaire à la finalité pour laquelle elles ont été collectées, sauf obligation légale de conservation plus longue.</p>
-        <p class="mt-2"><b>4.7. Sécurité des données</b><br/>Le Cabinet met en œuvre des mesures techniques et organisationnelles appropriées pour assurer la confidentialité, l’intégrité et la sécurité des données collectées.</p>
-        <p class="mt-2"><b>4.8. Autorité de contrôle</b><br/>L’utilisateur peut introduire une réclamation auprès de la Haute Autorité de Protection des Données à caractère Personnel (HAPDP) du Niger.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">5. Propriété intellectuelle</h3>
-        <p class="mt-2">Tous les contenus du site www.diallo-sambare.com (textes, images, logos, bases de données, logiciels, etc.) sont protégés par le droit d’auteur et demeurent la propriété exclusive de DIALLO & SAMBARE Cabinet d’Avocats, sauf mention contraire. Toute reproduction ou utilisation non autorisée est interdite.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">6. Obligations des utilisateurs</h3>
-        <p class="mt-2">En utilisant le site www.diallo-sambare.com, l’utilisateur s’engage à : respecter les lois et règlements en vigueur au Niger ; ne pas utiliser le site à des fins frauduleuses, illégales ou portant atteinte aux droits de tiers ; fournir des informations exactes lors de son utilisation du site.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">7. Responsabilités</h3>
-        <p class="mt-2">L’éditeur met tout en œuvre pour assurer le bon fonctionnement du site www.diallo-sambare.com, mais ne peut être tenu responsable en cas de : panne technique indépendante de sa volonté ; mauvaise utilisation par l’utilisateur ; intrusion ou attaque informatique.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">8. Modification des CGU</h3>
-        <p class="mt-2">L’éditeur se réserve le droit de modifier à tout moment les présentes CGU. L’utilisateur en sera informé par notification sur le site www.diallo-sambare.com (ou par email le cas échéant).</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">9. Loi applicable et réclamations</h3>
-        <p class="mt-2">Les présentes CGU sont régies par la législation de la République du Niger, notamment la Loi n°2022-59 du 16 décembre 2022 relative à la protection des données à caractère personnel.</p>
-        <p class="mt-2">Toute réclamation relative à l’exécution ou à l’interprétation des présentes CGU devra être adressée au préalable au Responsable du traitement, à savoir DIALLO & SAMBARE Cabinet d’Avocats, à l’adresse suivante : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.</p>
-        <p class="mt-2">À défaut de réponse dans un délai de trois (3) mois, l’utilisateur pourra saisir la Haute Autorité de Protection des Données à caractère Personnel (HAPDP).</p>
-      </div>
-    </div>
-  </div>
-</section>
-`;
-}
+    function render()
+    {
+        const r = route();
+        if(r==='/' || r.startsWith('/#')) mount(Home());
+        else if(r==='/presentation') mount(Presentation());
+        else if(r==='/competences') mount(Competences());
+        else if(r==='/honoraires') mount(Honoraires());
+        else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
+        else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
+        else if(r==='/cgu') mount(CGU());
+        else mount(Home());
+    }
 
     
-function render(){
-    const r = route();
-    if(r==='/' || r.startsWith('/#')) mount(Home());
-    else if(r==='/presentation') mount(Presentation());
-    else if(r==='/competences') mount(Competences());
-    else if(r==='/honoraires') mount(Honoraires());
-    else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
-    else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
-    else if(r==='/cgu') mount(CGU());
-    else mount(Home());
-  }
-
-  function bindContactForm(){
-    const form = document.getElementById('contactForm');
-    if(!form) return;
-
-    const msg = document.getElementById('formMsg');
-    const FORM_ID = 'mgvgqdpl';
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      msg.textContent = 'Envoi…';
-      msg.className = 'text-sm';
-
-      try {
-        const res = await fetch('https://formspree.io/f/' + FORM_ID, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          msg.textContent = 'Merci, votre message a bien été envoyé.';
-          msg.className = 'text-sm text-green-700';
-          form.reset();
-        } else {
-          const data = await res.json().catch(() => null);
-          msg.textContent = data?.error || 'Une erreur est survenue.';
-          msg.className = 'text-sm text-red-700';
+    function bindContactForm()
+    {
+      const form = document.getElementById('contactForm');
+      if(!form) return;
+  
+      const msg = document.getElementById('formMsg');
+      const FORM_ID = 'mgvgqdpl';
+  
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msg.textContent = 'Envoi…';
+        msg.className = 'text-sm';
+  
+        try {
+          const res = await fetch('https://formspree.io/f/' + FORM_ID, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+  
+          if (res.ok) {
+            msg.textContent = 'Merci, votre message a bien été envoyé.';
+            msg.className = 'text-sm text-green-700';
+            form.reset();
+          } else {
+            const data = await res.json().catch(() => null);
+            msg.textContent = data?.error || 'Une erreur est survenue.';
+            msg.className = 'text-sm text-red-700';
+          }
+        } catch (err) {
+          form.submit(); // fallback HTML
         }
-      } catch (err) {
-        form.submit(); // fallback HTML
-      }
-    });
-  }
+      });
+    }
 
-  function toISOUTC(d){
-    const p = n => String(n).padStart(2,'0');
-    return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
-  }
+    
+    function toISOUTC(d)
+    {
+      const p = n => String(n).padStart(2,'0');
+      return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
+    }
 
-  function bindRDVForm(){
-    const form = document.getElementById('rdvForm');
-    if(!form) return;
-
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const email = document.getElementById('rv_email').value.trim();
-      const date = document.getElementById('rv_date').value;
-      const time = document.getElementById('rv_time').value;
-      const mode = document.getElementById('rv_mode').value;
-      if(!email || !date || !time) return;
-
-      const [Y,M,D] = date.split('-').map(Number);
-      const [hh,mm] = time.split(':').map(Number);
-      const start = new Date(Y, M-1, D, hh, mm);
-      const end = new Date(start.getTime() + 60*60000);
-
-      const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
-      const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
-      const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
-      const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
-
-      const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
-        + '&subject=' + subject
-        + '&startdt=' + encodeURIComponent(toISOUTC(start))
-        + '&enddt=' + encodeURIComponent(toISOUTC(end))
-        + '&body=' + body
-        + '&location=' + location
-        + '&to=' + attendees;
-
-      window.open(url, '_blank');
-    });
-  }
-
-  window.addEventListener('hashchange', render);
-  render();
-
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        mobileMenu.classList.add('hidden');
-      }
-    });
-  }
+    function bindRDVForm()
+    {
+      const form = document.getElementById('rdvForm');
+      if(!form) return;
+  
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const email = document.getElementById('rv_email').value.trim();
+        const date = document.getElementById('rv_date').value;
+        const time = document.getElementById('rv_time').value;
+        const mode = document.getElementById('rv_mode').value;
+        if(!email || !date || !time) return;
+  
+        const [Y,M,D] = date.split('-').map(Number);
+        const [hh,mm] = time.split(':').map(Number);
+        const start = new Date(Y, M-1, D, hh, mm);
+        const end = new Date(start.getTime() + 60*60000);
+  
+        const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
+        const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
+        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
+        const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
+  
+        const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
+          + '&subject=' + subject
+          + '&startdt=' + encodeURIComponent(toISOUTC(start))
+          + '&enddt=' + encodeURIComponent(toISOUTC(end))
+          + '&body=' + body
+          + '&location=' + location
+          + '&to=' + attendees;
+  
+        window.open(url, '_blank');
+      });
+    }
+  
+      
+    window.addEventListener('hashchange', render);
+    render();
+  
+      
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+  
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+  
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
     
 </script>
 </body>  
