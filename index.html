@@ -164,9 +164,9 @@
           Coordonnées
         </p>
         <div class="mt-4 space-y-2 text-black/75">
-          <p>📞 +227 20 35 35 09</p>
-          <p>✉️ contact@diallo-sambare.com</p>
-          <p>🏢 BP 12 805 — Rue 012 cité Stin,<br/>Yantala, Niamey 08001</p>
+          <p>+227 20 35 35 09</p>
+          <p>contact@diallo-sambare.com</p>
+          <p>BP 12 805 - Rue 012 cité Stin,<br/>Yantala, Niamey 08001</p>
         </div>
       </div>
   
@@ -746,7 +746,7 @@
                                  focus:ring-[color:var(--dsca-peach)]/40"
                           placeholder="Décrivez brièvement votre besoin (contexte, objectif, délais)"></textarea>
     
-                <input type="hidden" name="_subject" value="Nouveau message — diallo-sambare.com" />
+                <input type="hidden" name="_subject" value="Nouveau message - diallo-sambare.com" />
                 <input type="hidden" name="site" value="https://www.diallo-sambare.com" />
     
                 <button class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-95 transition">
@@ -1074,9 +1074,9 @@
         const start = new Date(Y, M-1, D, hh, mm);
         const end = new Date(start.getTime() + 60*60000);
   
-        const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
+        const subject = encodeURIComponent('Rendez-vous - DIALLO & SAMBARE');
         const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
-        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
+        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet - BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
         const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
   
         const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
