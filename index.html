@@ -414,33 +414,42 @@ function render(){
       });
     }
     function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
-    function bindRDVForm(){
-      const form = document.getElementById('rdvForm'); if(!form) return;
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        const email = document.getElementById('rv_email').value.trim();
-        const date = document.getElementById('rv_date').value;
-        const time = document.getElementById('rv_time').value;
-        const mode = document.getElementById('rv_mode').value;
-        if(!email || !date || !time) return;
-        const [Y,M,D] = date.split('-').map(Number);
-        const [hh,mm] = time.split(':').map(Number);
-        const start = new Date(Y, M-1, D, hh, mm);
-        const end = new Date(start.getTime() + 60*60000);
-        const subject = encodeURIComponent('Rendez-vous — DIALLO & SAMBARE');
-        const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
-        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet — BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
-        const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
-        const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
-          + '&subject=' + subject
-          + '&startdt=' + encodeURIComponent(toISOUTC(start))
-          + '&enddt=' + encodeURIComponent(toISOUTC(end))
-          + '&body=' + body
-          + '&location=' + location
-          + '&to=' + attendees;
-        window.open(url, '_blank');
+    function bindContactForm(){
+  const form = document.getElementById('contactForm'); 
+  if(!form) return;
+
+  const msg = document.getElementById('formMsg');
+  const FORM_ID = 'mgvgqdpl';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.textContent = 'Envoi…';
+    msg.className = 'text-sm';
+
+    try {
+      const res = await fetch('https://formspree.io/f/' + FORM_ID, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       });
+
+      if (res.ok) {
+        msg.textContent = 'Merci, votre message a bien été envoyé.';
+        msg.className = 'text-sm text-green-700';
+        form.reset();
+      } else {
+        // On affiche une info utile plutôt que "Erreur"
+        const data = await res.json().catch(() => null);
+        msg.textContent = data?.error || 'Une erreur est survenue.';
+        msg.className = 'text-sm text-red-700';
+      }
+    } catch (err) {
+      // fallback : envoi HTML normal vers action=
+      form.submit();
     }
+  });
+}
+
 
     window.addEventListener('hashchange', render);
     render();
