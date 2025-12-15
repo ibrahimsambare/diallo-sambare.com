@@ -7,17 +7,63 @@
   <meta name="description" content="DIALLO & SAMBARE - Cabinet d'Avocats. Conseil & Contentieux." />
   <link rel="icon" href="assets/LOGO.jpeg" sizes="32x32" />
   <link rel="shortcut icon" href="assets/LOGO.jpeg" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ TYPO: Google Fonts (Playfair Display + Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    :root{--dsca-green:#002500;--dsca-sage:#929982;--dsca-peach:#EDCBB1;--dsca-ink:#0A0A0A}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans"}
+    :root{
+      --dsca-green:#002500;
+      --dsca-sage:#929982;
+      --dsca-peach:#EDCBB1;
+      --dsca-ink:#0A0A0A;
+      --dsca-text:#1f2933;
+    }
+
+    /* ✅ Base text */
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";
+      font-weight:400;
+      color:var(--dsca-text);
+      line-height:1.7;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ✅ Headings = premium law firm look */
+    h1,h2,h3,h4{
+      font-family:'Playfair Display',serif;
+      font-weight:600;
+      letter-spacing:-0.01em;
+      color:var(--dsca-ink);
+    }
+
+    h1{font-size:clamp(2.2rem,5vw,3.2rem); line-height:1.1;}
+    h2{font-size:clamp(1.8rem,4vw,2.4rem); line-height:1.15;}
+    h3{font-size:1.4rem; line-height:1.2;}
+
     .container{max-width:72rem;margin:0 auto;padding:0 1rem}
     a.btn,button.btn{border-radius:1rem;padding:.75rem 1.25rem;display:inline-block}
     .bullet li{margin-left:1rem; list-style: disc;}
     .section-card{border-radius:1rem; border:1px solid rgba(0,0,0,.06); padding:1.25rem}
     .hbar{height:.35rem; width:3rem; border-radius:9999px; background:var(--dsca-green);}
+
+    /* ✅ Optional: nav links more "cabinet" */
+    nav a{
+      font-family:'Inter',sans-serif;
+      font-weight:500;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
   </style>
 </head>
+
 <body class="bg-white text-[color:var(--dsca-ink)]">
   <header class="sticky top-0 z-40 bg-[color:var(--dsca-green)] text-white/95 shadow">
     <div class="container py-3 flex items-center justify-between">
