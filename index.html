@@ -28,14 +28,32 @@
           <p class="text-[11px] tracking-widest uppercase opacity-90">Cabinet d'Avocats</p>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm">
-        <a href="#/" class="hover:opacity-80">Accueil</a>
-        <a href="#/presentation" class="hover:opacity-80">Présentation</a>
-        <a href="#/competences" class="hover:opacity-80">Compétences</a>
-        <a href="#/honoraires" class="hover:opacity-80">Honoraires</a>
-        <a href="#/contact" class="hover:opacity-80">Contact</a>
-        <a href="#/rdv" class="rounded-xl px-3 py-1 bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] hover:opacity-90">Prendre RDV</a>
-      </nav>
+      
+     <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="#/" class="hover:opacity-80">Accueil</a>
+      <a href="#/presentation" class="hover:opacity-80">Présentation</a>
+      <a href="#/competences" class="hover:opacity-80">Compétences</a>
+      <a href="#/honoraires" class="hover:opacity-80">Honoraires</a>
+      <a href="#/contact" class="hover:opacity-80">Contact</a>
+      <a href="#/rdv" class="rounded-xl px-3 py-1 bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] hover:opacity-90">Prendre RDV</a>
+    </nav>
+
+    <!-- Mobile button -->
+    <button id="menuBtn" class="md:hidden rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20" aria-label="Ouvrir le menu">
+      ☰
+    </button>
+    <div id="mobileMenu" class="md:hidden hidden bg-[color:var(--dsca-green)] text-white border-t border-white/10">
+      <div class="container py-3 grid gap-2 text-sm">
+        <a href="#/" class="py-2 hover:opacity-80">Accueil</a>
+        <a href="#/presentation" class="py-2 hover:opacity-80">Présentation</a>
+        <a href="#/competences" class="py-2 hover:opacity-80">Compétences</a>
+        <a href="#/honoraires" class="py-2 hover:opacity-80">Honoraires</a>
+        <a href="#/contact" class="py-2 hover:opacity-80">Contact</a>
+        <a href="#/rdv" class="py-2 rounded-xl bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] text-center">Prendre RDV</a>
+      </div>
+</div>
+
     </div>
   </header>
 
@@ -88,7 +106,7 @@
             <p class="mt-4 text-white/90 max-w-prose">Maître Halima Diallo Sambare met son expertise juridique et son engagement au service de ses clients. Elle accorde une importance particulière à l’écoute et à la compréhension des besoins de chacun, afin d’apporter des conseils clairs et une stratégie adaptée à leurs besoins.</p>
             <div class="mt-8 flex flex-wrap gap-3">
               <a href="#/competences" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Nos compétences</a>
-              <a href="#/contact" class="btn bg-white text-[color:var(--dsca-green)] hover:bg-white/90">Contact rapide</a>
+              <a href="#/contact" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Contact rapide</a>
               <a href="#/rdv" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Prendre RDV</a>
             </div>
           </div>
@@ -484,6 +502,22 @@ function render(){
 
   window.addEventListener('hashchange', render);
   render();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+    
 </script>
 </body>  
 </html>
