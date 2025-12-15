@@ -145,8 +145,11 @@
   }
 
     function Home(){ return `<section class="relative bg-[color:var(--dsca-sage)]">
+    
         <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
+        
           <div>
+        
             <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-white/70">
               Conseil & Contentieux
             </span>
@@ -162,12 +165,35 @@
               l’écoute et à la compréhension des besoins de chacun, afin d’apporter des
               conseils clairs et une stratégie adaptée à leurs besoins.
             </p>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#/competences" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Nos compétences</a>
-              <a href="#/contact" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Contact rapide</a>
-              <a href="#/rdv" class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90">Prendre RDV</a>
-            </div>
+            
+            <div class="mt-8 flex flex-wrap gap-4 items-center">
+
+            <!-- CTA PRINCIPAL -->
+            <a href="#/rdv"
+               class="btn bg-[color:var(--dsca-peach)] text-[color:var(--dsca-green)]
+                      font-medium hover:opacity-90 transition">
+              Prendre RDV
+            </a>
+          
+            <!-- CTA SECONDAIRE -->
+            <a href="#/contact"
+               class="btn border border-white/60 text-white
+                      hover:bg-white hover:text-[color:var(--dsca-green)]
+                      transition">
+              Contact rapide
+            </a>
+          
+            <!-- LIEN TERTIAIRE -->
+            <a href="#/competences"
+               class="text-white/80 underline underline-offset-4
+                      hover:text-white transition">
+              Nos compétences
+            </a>
+          
           </div>
+
+          </div>
+
           <div class="relative">
             <div class="aspect-[4/5] w-full max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl ring-4 ring-white/30">
               <img src="assets/halima diallo.jpg" alt="Portrait" class="h-full w-full object-cover" />
