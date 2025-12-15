@@ -64,74 +64,140 @@
 </head>
 
 <body class="bg-white text-[color:var(--dsca-ink)]">
-  <header class="sticky top-0 z-40 bg-[color:var(--dsca-green)] text-white/95 shadow">
-    <div class="container py-3 flex items-center justify-between">
+
+  <header class="sticky top-0 z-40 bg-[color:var(--dsca-green)] text-white shadow-sm">
+    <div class="container h-16 flex items-center justify-between">
+  
+      <!-- LOGO + NOM -->
       <a href="#/" class="flex items-center gap-3">
-        <img src="assets/LOGO.jpeg" alt="Logo DSCA" class="h-10 w-10 object-contain rounded" />
+        <img src="assets/LOGO.jpeg"
+             alt="Logo Diallo & Sambare"
+             class="h-10 w-10 object-contain rounded-md bg-white/90 p-1" />
+  
         <div class="leading-tight">
-          <h1 class="text-lg md:text-xl font-semibold text-white">DIALLO & SAMBARE</h1>
-          <p class="text-[11px] tracking-widest uppercase opacity-90">Cabinet d'Avocats</p>
+          <h1 class="text-lg md:text-xl font-semibold tracking-wide text-white">
+            DIALLO & SAMBARE
+          </h1>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-white/80">
+            Cabinet d’Avocats
+          </p>
         </div>
       </a>
-      
-    <nav class="hidden md:flex items-center gap-7 text-sm">
-      <a href="#/" class="hover:opacity-80">Accueil</a>
-      <a href="#/presentation" class="hover:opacity-80">Présentation</a>
-      <a href="#/competences" class="hover:opacity-80">Compétences</a>
-      <a href="#/honoraires" class="hover:opacity-80">Honoraires</a>
-      <a href="#/contact" class="hover:opacity-80">Contact</a>
-      <a href="#/rdv" class="rounded-xl px-3 py-1 bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] hover:opacity-90">Prendre RDV</a>
-    </nav>
-
-    <button id="menuBtn" class="md:hidden rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20" aria-label="Ouvrir le menu">
-      ☰
-    </button>
-    <div id="mobileMenu" class="md:hidden hidden bg-[color:var(--dsca-green)] text-white border-t border-white/10">
-      <div class="container py-3 grid gap-2 text-sm">
+  
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] tracking-wide">
+        <a href="#/" class="hover:text-white/80 transition">Accueil</a>
+        <a href="#/presentation" class="hover:text-white/80 transition">Présentation</a>
+        <a href="#/competences" class="hover:text-white/80 transition">Compétences</a>
+        <a href="#/honoraires" class="hover:text-white/80 transition">Honoraires</a>
+        <a href="#/contact" class="hover:text-white/80 transition">Contact</a>
+  
+        <!-- CTA -->
+        <a href="#/rdv"
+           class="ml-2 rounded-full px-4 py-2
+                  bg-[color:var(--dsca-peach)]
+                  text-[color:var(--dsca-ink)]
+                  font-medium shadow-sm
+                  hover:opacity-90 transition">
+          Prendre RDV
+        </a>
+      </nav>
+  
+      <!-- BOUTON MOBILE -->
+      <button id="menuBtn"
+              class="md:hidden rounded-xl px-3 py-2
+                     bg-white/10 hover:bg-white/20 transition"
+              aria-label="Ouvrir le menu">
+        ☰
+      </button>
+    </div>
+  
+    <!-- MENU MOBILE -->
+    <div id="mobileMenu"
+         class="md:hidden hidden
+                bg-[color:var(--dsca-green)]
+                border-t border-white/10">
+  
+      <div class="container py-4 grid gap-1 text-sm">
         <a href="#/" class="py-2 hover:opacity-80">Accueil</a>
         <a href="#/presentation" class="py-2 hover:opacity-80">Présentation</a>
         <a href="#/competences" class="py-2 hover:opacity-80">Compétences</a>
         <a href="#/honoraires" class="py-2 hover:opacity-80">Honoraires</a>
         <a href="#/contact" class="py-2 hover:opacity-80">Contact</a>
-        <a href="#/rdv" class="py-2 rounded-xl bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)] text-center">Prendre RDV</a>
+  
+        <a href="#/rdv"
+           class="mt-2 rounded-xl py-2
+                  bg-[color:var(--dsca-peach)]
+                  text-[color:var(--dsca-ink)]
+                  text-center font-medium">
+          Prendre RDV
+        </a>
       </div>
-</div>
-
     </div>
   </header>
+
 
   <main id="app"></main>
 
   <footer class="border-t border-black/5 bg-white">
-    <div class="container py-10 grid sm:grid-cols-3 gap-8">
-      <div class="flex items-center gap-3">
-        <img src="assets/LOGO.jpeg" alt="Logo DSCA" class="h-10 w-10 rounded object-contain" />
+    <div class="container py-14 grid gap-10 md:grid-cols-3">
+  
+      <!-- IDENTITÉ -->
+      <div class="flex items-start gap-4">
+        <img src="assets/LOGO.jpeg" alt="Logo DSCA"
+             class="h-12 w-12 rounded-md object-contain ring-1 ring-black/10" />
         <div>
-          <p class="font-semibold">DIALLO & SAMBARE</p>
-          <p class="text-sm tracking-widest uppercase">Cabinet d'Avocats</p>
+          <p class="font-semibold tracking-wide">DIALLO & SAMBARE</p>
+          <p class="text-xs tracking-[0.25em] uppercase text-black/60">
+            Cabinet d'Avocats
+          </p>
+          <p class="mt-3 text-sm text-black/70 max-w-xs">
+            Cabinet d’avocats intervenant en conseil et en contentieux,
+            au service de clients institutionnels et privés.
+          </p>
         </div>
       </div>
+  
+      <!-- COORDONNÉES -->
       <div class="text-sm">
-        <p class="font-medium text-[color:var(--dsca-green)]">Coordonnées</p>
-        <p class="mt-2">+227 20 35 35 09</p>
-        <p>contact@diallo-sambare.com</p>
-        <p>BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001</p>
+        <p class="font-medium text-[color:var(--dsca-green)] tracking-wide uppercase">
+          Coordonnées
+        </p>
+        <div class="mt-4 space-y-2 text-black/75">
+          <p>📞 +227 20 35 35 09</p>
+          <p>✉️ contact@diallo-sambare.com</p>
+          <p>🏢 BP 12 805 — Rue 012 cité Stin,<br/>Yantala, Niamey 08001</p>
+        </div>
       </div>
+  
+      <!-- NAVIGATION -->
       <div class="text-sm">
-        <p class="font-medium text-[color:var(--dsca-green)]">Accès rapide</p>
-        <ul class="mt-2 grid grid-cols-2 gap-x-6 gap-y-1">
-        <li><a href="#/" class="hover:underline">Accueil</a></li>
-          <li><a href="#/presentation" class="hover:underline">Présentation</a></li>
-          <li><a href="#/competences" class="hover:underline">Compétences</a></li>
-          <li><a href="#/honoraires" class="hover:underline">Honoraires</a></li>
-          <li><a href="#/contact" class="hover:underline">Contact</a></li>
-          <li><a href="#/rdv" class="hover:underline">Prendre RDV</a></li>
-          <li><a href="#/cgu" class="hover:underline">CGU</a></li>
+        <p class="font-medium text-[color:var(--dsca-green)] tracking-wide uppercase">
+          Accès rapide
+        </p>
+        <ul class="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-black/75">
+          <li><a href="#/" class="hover:text-black transition">Accueil</a></li>
+          <li><a href="#/presentation" class="hover:text-black transition">Présentation</a></li>
+          <li><a href="#/competences" class="hover:text-black transition">Compétences</a></li>
+          <li><a href="#/honoraires" class="hover:text-black transition">Honoraires</a></li>
+          <li><a href="#/contact" class="hover:text-black transition">Contact</a></li>
+          <li><a href="#/rdv" class="hover:text-black transition">Prendre RDV</a></li>
+          <li><a href="#/cgu" class="hover:text-black transition">CGU</a></li>
         </ul>
       </div>
+  
     </div>
-    <div class="bg-[color:var(--dsca-green)] text-white/90 text-xs text-center py-3">© <span id="year"></span> DIALLO & SAMBARE — Tous droits réservés.</div>
+  
+    <!-- BARRE BASSE SIGNATURE -->
+    <div class="bg-[color:var(--dsca-green)]">
+      <div class="container py-4 text-center text-xs text-white/90 tracking-wide">
+        © <span id="year"></span> DIALLO & SAMBARE - Tous droits réservés
+        <span class="mx-2 opacity-50">•</span>
+        <span class="opacity-80">Site conçu par nitec.fr</span>
+      </div>
+    </div>
   </footer>
+
 
   <script>
   document.getElementById('year').textContent = new Date().getFullYear();
