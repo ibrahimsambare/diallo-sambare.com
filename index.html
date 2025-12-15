@@ -388,18 +388,18 @@
 `;
 }
 function render(){
-      const r = route();
-      if(r==='/' || r.startsWith('/#')) mount(Home());
-      else if(r==='/presentation') mount(Presentation());
-      else if(r==='/competences') mount(Competences());
-      else if(r==='/honoraires') mount(Honoraires());
-      else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
-      else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
-      else if(r==='/cgu') mount(CGU());
-      else mount(Home());
-    }
+  const r = route();
+  if(r==='/' || r.startsWith('/#')) mount(Home());
+  else if(r==='/presentation') mount(Presentation());
+  else if(r==='/competences') mount(Competences());
+  else if(r==='/honoraires') mount(Honoraires());
+  else if(r.startsWith('/contact')) { mount(Contact()); setTimeout(bindContactForm, 0); }
+  else if(r.startsWith('/rdv')) { mount(RDV()); setTimeout(bindRDVForm, 0); }
+  else if(r==='/cgu') mount(CGU());
+  else mount(Home());
+} // ✅ <- cette accolade manquait
 
-    function bindContactForm(){
+function bindContactForm(){
   const form = document.getElementById('contactForm');
   if(!form) return;
 
@@ -412,7 +412,7 @@ function render(){
     msg.className = 'text-sm';
 
     try {
-      const res = await fetch('https://formspree.io/f/' + FORM_ID, {
+      const res = await fetch('https://formspree.io/f/mgvgqdpl', {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
@@ -433,10 +433,10 @@ function render(){
   });
 }
 
-    function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
+function toISOUTC(d){
+  const p=n=>String(n).padStart(2,'0');
+  return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
+}
 
-    window.addEventListener('hashchange', render);
-    render();
-  </script>
-</body>
-</html>
+window.addEventListener('hashchange', render);
+render();
