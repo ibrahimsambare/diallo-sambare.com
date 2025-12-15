@@ -390,69 +390,100 @@
     }
 
 
-
-
-    function Competences()
-    {
+    function Competences() {
       return `
       <section class="bg-white">
-        <div class="container py-16 max-w-5xl">
-          <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Compétences</h2>
-          <div class="mt-10 grid lg:grid-cols-2 gap-6">
-            <div class="section-card">
+        <div class="container py-20 max-w-6xl">
+    
+          <div class="max-w-2xl">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              Expertise
+            </span>
+    
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+              Domaines de compétence
+            </h2>
+    
+            <p class="mt-4 text-black/70">
+              Le cabinet intervient en conseil et en contentieux dans des domaines
+              stratégiques du droit, au service des entreprises, institutions et particuliers.
+            </p>
+          </div>
+    
+          <div class="mt-12 grid lg:grid-cols-2 gap-8">
+    
+            <div class="section-card bg-[#F7F7F6]">
               <div class="hbar"></div>
-              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Accompagnement des entreprises et institutions</h3>
-              <ul class="mt-3 bullet text-sm space-y-1">
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Accompagnement des entreprises et institutions
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
                 <li>Droit des sociétés</li>
                 <li>Contrats commerciaux et recouvrement</li>
                 <li>Contentieux civil et commercial</li>
-                <li>Droit social et droit de la sécurité sociale</li>
+                <li>Droit social et sécurité sociale</li>
                 <li>Droit bancaire et financier</li>
                 <li>Droit pénal des affaires</li>
                 <li>Droit public</li>
               </ul>
             </div>
-            <div class="section-card">
+    
+            <div class="section-card bg-[#F7F7F6]">
               <div class="hbar"></div>
-              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Foncier & immobilier</h3>
-              <ul class="mt-3 bullet text-sm space-y-1">
-                <li>Litige foncier</li>
-                <li>Conseil et contentieux en droit de l’urbanisme</li>
-                <li>Conseil et contentieux des baux d’habitation</li>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Foncier & Immobilier
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Litiges fonciers</li>
+                <li>Droit de l’urbanisme</li>
+                <li>Baux d’habitation et commerciaux</li>
               </ul>
             </div>
-            <div class="section-card">
+    
+            <div class="section-card bg-[#F7F7F6]">
               <div class="hbar"></div>
-              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">MARD</h3>
-              <p class="mt-2 text-sm opacity-80">Médiation • Arbitrage • Processus collaboratif</p>
-              <ul class="mt-3 bullet text-sm space-y-1">
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Modes Alternatifs de Règlement des Différends (MARD)
+              </h3>
+              <p class="mt-2 text-sm text-black/60">
+                Médiation • Arbitrage • Processus collaboratif
+              </p>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
                 <li>Arbitrage</li>
                 <li>Médiation</li>
                 <li>Processus collaboratif</li>
               </ul>
             </div>
-            <div class="section-card">
+    
+            <div class="section-card bg-[#F7F7F6]">
               <div class="hbar"></div>
-              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Mines et Pétrole</h3>
-              <ul class="mt-3 bullet text-sm space-y-1">
-                <li>Titres et contrats</li>
-                <li>Négociations</li>
-                <li>Partenariats public-Privé et financement de projets</li>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Mines & Pétrole
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Titres miniers et pétroliers</li>
+                <li>Négociation de contrats</li>
+                <li>PPP et financement de projets</li>
               </ul>
             </div>
-            <div class="section-card lg:col-span-2">
+    
+            <div class="section-card bg-[#F7F7F6] lg:col-span-2">
               <div class="hbar"></div>
-              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Conformité & Gouvernance</h3>
-              <ul class="mt-3 bullet text-sm space-y-1">
-                <li>Éthique & prévention des risques</li>
-                <li>Politiques internes</li>
-                <li>Formation & sensibilisation</li>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Conformité & Gouvernance
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Éthique et prévention des risques</li>
+                <li>Politiques internes et gouvernance</li>
+                <li>Formation et sensibilisation</li>
               </ul>
             </div>
+    
           </div>
         </div>
       </section>`;
     }
+
 
     
     function Honoraires(){ return `\
