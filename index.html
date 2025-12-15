@@ -422,7 +422,7 @@ function render(){
       msg.className = 'text-sm';
 
       try {
-        const res = await fetch('https://formspree.io/f/mgvgqdpl', {
+        const res = await fetch('https://formspree.io/f/' + FORM_ID, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
@@ -485,3 +485,6 @@ function render(){
   window.addEventListener('hashchange', render);
   render();
 </script>
+</body>  
+</html>
+
