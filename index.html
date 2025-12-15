@@ -485,36 +485,85 @@
     }
 
 
-    
-    function Honoraires(){ return `\
-<section class="bg-white">
-  <div class="container py-16 max-w-4xl">
-    <h2 class="text-3xl font-semibold text-[color:var(--dsca-green)]">Honoraires</h2>
-    <article class="prose max-w-none">
-      <p class="mt-4">Diallo & Sambare établit ses honoraires en toute transparence avec ses clients, selon la nature et la difficulté de l'affaire et du temps consacré au traitement du dossier.</p>
+    function Honoraires() 
+    {
+      return `
+      <section class="bg-[#F7F7F6]">
+        <div class="container py-20 max-w-4xl">
+      
+          <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+            Informations
+          </span>
+      
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+            Honoraires
+          </h2>
+      
+          <article class="mt-8 space-y-5 text-[16.5px] leading-relaxed text-black/80">
+            <p>
+              Diallo & Sambare établit ses honoraires en toute transparence avec ses clients,
+              selon la nature et la difficulté de l'affaire ainsi que le temps consacré au
+              traitement du dossier.
+            </p>
+      
+            <p>
+              Dès le premier rendez-vous et après étude préliminaire du dossier, le cabinet
+              propose au client le mode de facturation le plus adapté.
+            </p>
+      
+            <p>
+              Une convention d'honoraires est systématiquement établie afin de préciser les
+              modalités de fixation et de règlement des honoraires.
+            </p>
+          </article>
+      
+          <div class="mt-12 grid md:grid-cols-2 gap-6">
+      
+            <div class="section-card bg-white">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">
+                Honoraire au temps passé
+              </h3>
+              <p class="mt-3 text-sm text-black/75 leading-relaxed">
+                Les honoraires sont calculés en fonction du temps consacré au dossier et du
+                tarif horaire de l’avocat. Un nombre prévisionnel d’heures est communiqué au
+                client, accompagné d’un décompte détaillé du temps passé.
+              </p>
+            </div>
+      
+            <div class="section-card bg-white">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">
+                Honoraire au forfait
+              </h3>
+              <p class="mt-3 text-sm text-black/75 leading-relaxed">
+                Cette formule est privilégiée lorsque le dossier présente peu d’aléas,
+                permettant de convenir d’un montant global couvrant l’ensemble de la
+                procédure.
+              </p>
+            </div>
+      
+          </div>
+      
+          <p class="mt-8 text-sm text-black/60">
+            À noter : dès l’ouverture du dossier, des frais d’ouverture peuvent être demandés
+            ainsi qu’une provision destinée à couvrir les frais d’actes et de procédures.
+          </p>
+      
+          <div class="mt-10">
+            <a href="#/contact"
+               class="inline-flex items-center rounded-2xl bg-[color:var(--dsca-green)]
+                      text-white px-7 py-3 font-medium hover:opacity-90 transition">
+              Demander un devis
+            </a>
+          </div>
+      
+        </div>
+      </section>
+      `;
+    }
 
-      <p class="mt-4">Dès le premier rendez-vous et après étude préliminaire du dossier, le cabinet Diallo & Sambare proposera au client le mode de facturation adapté.</p>
 
-      <p class="mt-4">Pour préciser les modalités de fixation et de règlement des honoraires, une convention d'honoraires sera passée entre Diallo & Sambare et le client.</p>
-
-      <p class="mt-4"><b>Deux formules existent :</b></p>
-
-      <h3 class="mt-6 font-semibold text-[color:var(--dsca-green)]">L'honoraire « au temps passé » :</h3>
-      <p class="mt-2">Le montant des honoraires sera fonction du temps passé par l'avocat et de son tarif horaire. Lorsque cette formule de rémunération est adoptée, Diallo & Sambare indique à son client le nombre prévisionnel d'heures nécessaires au traitement de son dossier, et tient à sa disposition un décompte du temps consacré à son affaire.</p>
-
-      <h3 class="mt-6 font-semibold text-[color:var(--dsca-green)]">L'honoraire « au forfait » :</h3>
-      <p class="mt-2">Cette formule est généralement utilisée dans le cas où il n'existe que peu d'aléa concernant le déroulement de la procédure, permettant donc au cabinet de convenir avec son client d'un montant forfaitaire pour l'ensemble du traitement du dossier.</p>
-
-      <p class="mt-4">À noter : dès l’ouverture de votre dossier vous devrez vous acquitter des frais d’ouverture de dossier et si nécessaire, verser une provision pour couvrir les éventuels frais d'actes et de procédures.</p>
-    </article>
-    <div class="mt-8 section-card bg-[color:var(--dsca-peach)]/30">
-      <a href="#/contact" class="inline-block rounded-2xl bg-[color:var(--dsca-green)] text-white px-6 py-3">Demander un devis</a>
-    </div>
-  </div>
-</section>
-`; }
-
-    
     function Contact(){
       return `
       <section class="bg-[#F7F7F6]">
