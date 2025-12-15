@@ -53,7 +53,8 @@
     .hbar{height:.35rem; width:3rem; border-radius:9999px; background:var(--dsca-green);}
 
     /* Optional: nav links more "cabinet" */
-    nav a{
+    nav a
+    {
       font-family:'Inter',sans-serif;
       font-weight:500;
       letter-spacing:.06em;
@@ -67,38 +68,44 @@
       *{animation:none !important; transition:none !important;}
     }
   
-    .reveal
+      .reveal
       {
       opacity:0;
       transform: translateY(16px);
       transition: opacity .7s ease, transform .7s ease;
       }
-    .reveal.is-visible
+      .reveal.is-visible
       {
       opacity:1;
       transform: translateY(0);
       }
   
-    .hover-lift
+      .hover-lift
       {
       transition: transform .25s ease, box-shadow .25s ease;
       }
-    .hover-lift:hover
+      .hover-lift:hover
       {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(0,0,0,.10);
       }
     
-      /* Reveal gauche -> droite (wipe) déclenché quand .is-visible est ajouté */
-      .wipe {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        clip-path: inset(0 100% 0 0); /* caché */
+      /* Par défaut: visible (fallback) */
+      .wipe 
+      { 
+      display:inline-block; white-space:nowrap; 
       }
       
-      .wipe.is-visible {
-        animation: wipeIn 0.9s ease-out forwards;
+      /* Seulement si JS est actif -> on masque puis on révèle */
+      .js .wipe
+      {
+        overflow:hidden;
+        clip-path: inset(0 100% 0 0);
+      }
+      
+      .js .wipe.is-visible
+      {
+        animation: wipeIn .9s ease-out forwards;
       }
       
       @keyframes wipeIn {
@@ -109,7 +116,10 @@
       .d1 { animation-delay: .05s; }
       .d2 { animation-delay: .18s; }
       .d3 { animation-delay: .32s; }
-    
+
+
+
+
   </style>
 </head>
 
@@ -1245,6 +1255,17 @@
       homeSlideIndex = i;
       updateHomeSlider();
     }
+
+    document.documentElement.classList.add('js');
+
+    // force reveal wipe au chargement (et après chaque slide)
+    function revealWipes()
+    {
+      document.querySelectorAll('.wipe').forEach(el => el.classList.add('is-visible'));
+    }
+  
+    window.addEventListener('load', revealWipes);
+
     
 </script>
 </body>  
