@@ -415,7 +415,7 @@ function render(){
     }
     function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
     function bindContactForm(){
-  const form = document.getElementById('contactForm'); 
+  const form = document.getElementById('contactForm');
   if(!form) return;
 
   const msg = document.getElementById('formMsg');
@@ -438,17 +438,18 @@ function render(){
         msg.className = 'text-sm text-green-700';
         form.reset();
       } else {
-        // On affiche une info utile plutôt que "Erreur"
         const data = await res.json().catch(() => null);
         msg.textContent = data?.error || 'Une erreur est survenue.';
         msg.className = 'text-sm text-red-700';
       }
+
     } catch (err) {
-      // fallback : envoi HTML normal vers action=
+      // fallback HTML classique si fetch échoue
       form.submit();
     }
   });
 }
+
 
 
     window.addEventListener('hashchange', render);
