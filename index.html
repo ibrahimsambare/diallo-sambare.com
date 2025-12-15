@@ -409,7 +409,8 @@ function render(){
           const res = await fetch('https://formspree.io/f/'+FORM_ID, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
           if(res.ok){ msg.textContent='Merci, votre message a bien été envoyé.'; msg.className='text-sm text-green-700'; form.reset(); }
           else { msg.textContent='Une erreur est survenue.'; msg.className='text-sm text-red-700'; }
-        }catch{ msg.textContent='Impossible d\'envoyer le message pour le moment.'; msg.className='text-sm text-red-700'; }
+        }
+        }catch{form.submit(); // fallback : envoi classique vers action=}
       });
     }
     function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
