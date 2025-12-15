@@ -400,21 +400,6 @@ function render(){
     }
 
     function bindContactForm(){
-      const form = document.getElementById('contactForm'); if(!form) return;
-      const msg = document.getElementById('formMsg');
-      const FORM_ID = 'mgvgqdpl';
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault(); msg.textContent='Envoi…'; msg.className='text-sm';
-        try{
-          const res = await fetch('https://formspree.io/f/'+FORM_ID, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
-          if(res.ok){ msg.textContent='Merci, votre message a bien été envoyé.'; msg.className='text-sm text-green-700'; form.reset(); }
-          else { msg.textContent='Une erreur est survenue.'; msg.className='text-sm text-red-700'; }
-        }
-        }catch{form.submit(); // fallback : envoi classique vers action=}
-      });
-    }
-    function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
-    function bindContactForm(){
   const form = document.getElementById('contactForm');
   if(!form) return;
 
@@ -442,15 +427,13 @@ function render(){
         msg.textContent = data?.error || 'Une erreur est survenue.';
         msg.className = 'text-sm text-red-700';
       }
-
     } catch (err) {
-      // fallback HTML classique si fetch échoue
       form.submit();
     }
   });
 }
 
-
+    function toISOUTC(d){ const p=n=>String(n).padStart(2,'0'); return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z'; }
 
     window.addEventListener('hashchange', render);
     render();
