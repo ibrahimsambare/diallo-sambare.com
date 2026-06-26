@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIALLO & SAMBARE | Cabinet d'Avocats</title>
+  <meta name="description" content="DIALLO & SAMBARE - Cabinet d'Avocats. Conseil & Contentieux." />
+  <link rel="icon" href="assets/LOGO.jpeg" sizes="32x32" />
+  <link rel="shortcut icon" href="assets/LOGO.jpeg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --dsca-green:#002500;
+      --dsca-sage:#929982;
+      --dsca-peach:#EDCBB1;
+      --dsca-ink:#0A0A0A;
+      --dsca-text:#1f2933;
+    }
+
+    /* Base text */
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";
+      font-weight:400;
+      color:var(--dsca-text);
+      line-height:1.7;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Headings = premium law firm look */
+    h1,h2,h3,h4{
+      font-family:'Playfair Display',serif;
+      font-weight:600;
+      letter-spacing:-0.01em;
+      color:var(--dsca-ink);
+    }
+
+    h1{font-size:clamp(2.2rem,5vw,3.2rem); line-height:1.1;}
+    h2{font-size:clamp(1.8rem,4vw,2.4rem); line-height:1.15;}
+    h3{font-size:1.4rem; line-height:1.2;}
+
+    .container{max-width:72rem;margin:0 auto;padding:0 1rem}
+    a.btn,button.btn{border-radius:1rem;padding:.75rem 1.25rem;display:inline-block}
+    .bullet li{margin-left:1rem; list-style: disc;}
+    .section-card{border-radius:1rem; border:1px solid rgba(0,0,0,.06); padding:1.25rem}
+    .hbar{height:.35rem; width:3rem; border-radius:9999px; background:var(--dsca-green);}
+
+    /* Optional: nav links more "cabinet" */
+    nav a
+    {
+      font-family:'Inter',sans-serif;
+      font-weight:500;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+
+    /* Animations (site entier) */
+    @media (prefers-reduced-motion: reduce)
+    {
+      *{animation:none !important; transition:none !important;}
+    }
+  
+      .reveal
+      {
+      opacity:0;
+      transform: translateY(16px);
+      transition: opacity .7s ease, transform .7s ease;
+      }
+      .reveal.is-visible
+      {
+      opacity:1;
+      transform: translateY(0);
+      }
+  
+      .hover-lift
+      {
+      transition: transform .25s ease, box-shadow .25s ease;
+      }
+      .hover-lift:hover
+      {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.10);
+      }
+    
+      /* Par défaut: visible (fallback) */
+      .wipe 
+      { 
+      display:inline-block; white-space:nowrap; 
+      }
+      
+      /* Seulement si JS est actif -> on masque puis on révèle */
+      .js .wipe
+      {
+        overflow:hidden;
+        clip-path: inset(0 100% 0 0);
+      }
+      
+      .js .wipe.is-visible
+      {
+        animation: wipeIn .9s ease-out forwards;
+      }
+      
+      @keyframes wipeIn {
+        to { clip-path: inset(0 0 0 0); }
+      }
+      
+      /* Delays simples (pour enchaîner les lignes) */
+      .d1 { animation-delay: .05s; }
+      .d2 { animation-delay: .18s; }
+      .d3 { animation-delay: .34s; }
+
+
+
+
+  </style>
+</head>
+
+<body class="bg-white text-[color:var(--dsca-ink)]">
+
+  <header class="sticky top-0 z-40 bg-[color:var(--dsca-green)] text-white shadow-sm">
+    <div class="container h-16 flex items-center justify-between">
+  
+      <!-- LOGO + NOM -->
+      <a href="#/" class="flex items-center gap-3">
+        <img src="assets/LOGO.jpeg"
+             alt="Logo Diallo & Sambare"
+             class="h-10 w-10 object-contain rounded-md bg-white/90 p-1" />
+  
+        <div class="leading-tight">
+          <h1 class="text-lg md:text-xl font-semibold tracking-wide text-white">
+            DIALLO & SAMBARE
+          </h1>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-white/80">
+            Cabinet d’Avocats
+          </p>
+        </div>
+      </a>
+  
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] tracking-wide">
+        <a href="#/" class="hover:text-white/80 transition">Accueil</a>
+        <a href="#/presentation" class="hover:text-white/80 transition">Présentation</a>
+        <a href="#/competences" class="hover:text-white/80 transition">Compétences</a>
+        <a href="#/honoraires" class="hover:text-white/80 transition">Honoraires</a>
+        <a href="#/partenaires" class="hover:text-white/80 transition">Partenaires</a>
+        <a href="#/contact" class="hover:text-white/80 transition">Contact</a>
+
+        <!-- CTA -->
+        <a href="#/rdv"
+           class="ml-2 rounded-full px-4 py-2
+                  bg-[color:var(--dsca-peach)]
+                  text-[color:var(--dsca-ink)]
+                  font-medium shadow-sm
+                  hover:opacity-90 transition">
+          Prendre RDV
+        </a>
+      </nav>
+  
+      <!-- BOUTON MOBILE -->
+      <button id="menuBtn"
+              class="md:hidden rounded-xl px-3 py-2
+                     bg-white/10 hover:bg-white/20 transition"
+              aria-label="Ouvrir le menu">
+        ☰
+      </button>
+    </div>
+  
+    <!-- MENU MOBILE -->
+    <div id="mobileMenu"
+         class="md:hidden hidden
+                bg-[color:var(--dsca-green)]
+                border-t border-white/10">
+  
+      <div class="container py-4 grid gap-1 text-sm">
+        <a href="#/" class="py-2 hover:opacity-80">Accueil</a>
+        <a href="#/presentation" class="py-2 hover:opacity-80">Présentation</a>
+        <a href="#/competences" class="py-2 hover:opacity-80">Compétences</a>
+        <a href="#/honoraires" class="py-2 hover:opacity-80">Honoraires</a>
+        <a href="#/partenaires" class="py-2 hover:opacity-80">Partenaires</a>
+        <a href="#/contact" class="py-2 hover:opacity-80">Contact</a>
+
+        <a href="#/rdv"
+           class="mt-2 rounded-xl py-2
+                  bg-[color:var(--dsca-peach)]
+                  text-[color:var(--dsca-ink)]
+                  text-center font-medium">
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="app"></main>
+
+  <footer class="border-t border-black/5 bg-white">
+    <div class="container py-14 grid gap-10 md:grid-cols-3">
+  
+      <!-- IDENTITÉ -->
+      <div>
+        <div class="flex items-start gap-4">
+          <img src="assets/LOGO.jpeg" alt="Logo DSCA"
+               class="h-12 w-12 rounded-md object-contain ring-1 ring-black/10" />
+      
+          <div>
+            <p class="font-semibold tracking-wide">DIALLO & SAMBARE</p>
+            <p class="text-xs tracking-[0.25em] uppercase text-black/60">
+              Cabinet d'Avocats
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COORDONNÉES -->
+      <div class="text-sm">
+        <p class="font-medium text-[color:var(--dsca-green)] tracking-wide uppercase">
+          Coordonnées
+        </p>
+        <div class="mt-4 space-y-2 text-black/75">
+          <p>+227 20 35 35 09</p>
+          <p>contact@diallo-sambare.com</p>
+          <p>BP 12 805 - Rue 012 cité Stin,<br/>Yantala, Niamey 08001</p>
+        </div>
+      </div>
+  
+      <!-- NAVIGATION -->
+      <div class="text-sm">
+        <p class="font-medium text-[color:var(--dsca-green)] tracking-wide uppercase">
+          Accès rapide
+        </p>
+        <ul class="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-black/75">
+          <li><a href="#/" class="hover:text-black transition">Accueil</a></li>
+          <li><a href="#/presentation" class="hover:text-black transition">Présentation</a></li>
+          <li><a href="#/competences" class="hover:text-black transition">Compétences</a></li>
+          <li><a href="#/honoraires" class="hover:text-black transition">Honoraires</a></li>
+          <li><a href="#/partenaires" class="hover:text-black transition">Partenaires</a></li>
+          <li><a href="#/contact" class="hover:text-black transition">Contact</a></li>
+          <li><a href="#/rdv" class="hover:text-black transition">Prendre RDV</a></li>
+          <li><a href="#/cgu" class="hover:text-black transition">CGU</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <!-- BARRE BASSE SIGNATURE -->
+    <div class="bg-[color:var(--dsca-green)]">
+      <div class="container py-4 text-center text-xs text-white/90 tracking-wide">
+        © <span id="year"></span> DIALLO & SAMBARE - Tous droits réservés
+        <span class="mx-2 opacity-50">•</span>
+        <span class="opacity-80">Site conçu et piloté par nitec.fr</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+    
+    function route()
+      { 
+        return location.hash.replace('#','') || '/'; 
+      }
+    
+    function mount(html)
+      {
+        document.getElementById('app').innerHTML = html;
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+
+    function Home()
+    { 
+      return `
+      <section class="relative bg-[color:var(--dsca-sage)] overflow-hidden">
+        <!-- TRACK -->
+        <div id="homeSlider" class="flex items-start transition-transform duration-700 ease-in-out">
+
+          <!-- ===================== SLIDE 1 : FINAL (slider-friendly) ===================== -->
+          <div class="min-w-full">
+            <div class="relative min-h-[460px] md:min-h-[600px] lg:min-h-[640px] flex items-start md:item-center pt-16 md:pt-0">
+              <div class="container relative w-full">
+          
+                <!-- LABEL -->
+                <div class="mb-6 md:mb-8 px-4">
+                  <span class="reveal inline-block text-left text-[0.75rem]
+                               tracking-[0.35em] uppercase text-white/70">
+                    CONSEIL & CONTENTIEUX
+                  </span>
+                </div>
+          
+                <!-- CONTENU -->
+                <div class="px-4 w-full max-w-5xl text-center mx-auto">
+                  <h1 class="font-serif font-semibold text-white
+                             text-[clamp(2.4rem,6.2vw,6.3rem)]
+                             leading-[1.08] pb-2">
+                    <span class="wipe reveal d1">L’expertise juridique</span>
+                  </h1>
+          
+                  <p class="mt-3 font-serif italic font-normal text-white
+                            text-[clamp(2.0rem,5.2vw,5.2rem)]
+                            leading-[1.12] pb-2">
+                    <span class="wipe reveal d2">au service de</span>
+                    <span class="wipe reveal d3"> l’avantage stratégique</span>
+                  </p>
+          
+                  <div class="reveal mt-8 md:mt-10 flex flex-wrap gap-4 justify-center items-center">
+                    <a href="#/rdv"
+                       class="btn hover-lift bg-[color:var(--dsca-peach)] text-[color:var(--dsca-green)]
+                              font-medium hover:opacity-90 transition">
+                      Prendre RDV
+                    </a>
+          
+                    <a href="#/contact"
+                       class="btn hover-lift border border-white/60 text-white
+                              hover:bg-white hover:text-[color:var(--dsca-green)]
+                              transition">
+                      Contact rapide
+                    </a>
+          
+                    <a href="#/competences"
+                       class="text-white/80 underline underline-offset-4 hover:text-white transition">
+                      Nos compétences
+                    </a>
+                  </div>
+                  
+                  <!-- LEXING NETWORK -->
+                  <div class="reveal mt-48 md:mt-12 flex flex-col items-center text-center px-6">
+                  
+                    <!-- TEXTE -->
+                    <p class="text-white/70 text-base md:text-base tracking-wide mb-4 max-w-md">
+                      Le cabinet est membre du réseau international 
+                      <span class="font-medium text-white">Lexing Network</span>, 
+                      premier réseau mondial d’avocats spécialisés en droit du numérique 
+                      et des technologies.
+                    </p>
+                  
+                    <!-- LOGO -->
+                    <a href="https://lexing.network/avocat/halima-diallo/" target="_blank" rel="noopener">
+                      <img 
+                        src="/assets/logo-lexing-network.png"
+                        alt="Membre du réseau Lexing Network"
+                        class="h-24 md:h-16 opacity-95 hover:opacity-100 transition hover:scale-105"
+                      />
+                    </a>
+                  
+                  </div>
+        
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== SLIDE 2 : PHOTO + TEXTE ===================== -->
+          <div class="min-w-full">
+            <div class="container py-16 grid md:grid-cols-2 gap-10 items-center">
+      
+              <!-- TEXTE -->
+              <div class="slide2-text max-w-lg pl-12 md:pl-16 pr-6 text-justify">
+                <span class="reveal inline-block text-[0.75rem] tracking-[0.25em] uppercase text-white/70">
+                  Présentation
+                </span>
+      
+                <p class="reveal mt-6 text-white/85 max-w-prose leading-relaxed text-base md:text-lg">
+                  Maître Halima Diallo Sambare met son expertise juridique et son engagement
+                  au service de ses clients. Elle accorde une importance particulière à
+                  l’écoute et à la compréhension des besoins de chacun, afin d’apporter des
+                  conseils clairs et une stratégie adaptée à leurs besoins.
+                </p>
+      
+                <div class="reveal mt-8">
+                  <a href="#/contact"
+                    class="btn hover-lift bg-white/10 border border-white/30 text-white hover:bg-white/20 transition">
+                    Prendre contact
+                  </a>
+                </div>
+              </div>
+      
+              <!-- PHOTO -->
+              <div class="relative flex flex-col items-center">
+                <div class="reveal aspect-[4/5] w-full max-w-sm md:max-w-md
+                            rounded-2xl overflow-hidden
+                            shadow-2xl ring-2 ring-white/40
+                            bg-white/10 backdrop-blur-sm">
+                  <img
+                    src="assets/halima diallo.svg"
+                    alt="Maître Halima Diallo Sambare"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+      
+                <div class="reveal mt-6">
+                  <span class="inline-flex items-center gap-2
+                               text-base md:text-lg font-serif
+                               bg-[color:var(--dsca-peach)]
+                               text-[color:var(--dsca-ink)]
+                               px-6 py-2.5 rounded-full shadow-md tracking-wide">
+                    Maître Halima Diallo • Avocat à la Cour
+                  </span>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      
+        <!-- FLÈCHES -->
+        <button type="button" onclick="prevHomeSlide()"
+          class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2
+                 h-12 w-12 rounded-full border border-white/40 bg-white/10
+                 text-white text-3xl leading-none hover:bg-white/20 transition">
+          ‹
+        </button>
+      
+        <button type="button" onclick="nextHomeSlide()"
+          class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2
+                 h-12 w-12 rounded-full border border-white/40 bg-white/10
+                 text-white text-3xl leading-none hover:bg-white/20 transition">
+          ›
+        </button>
+      
+        <!-- DOTS -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          <button type="button" onclick="goHomeSlide(0)" class="homeDot h-2.5 w-2.5 rounded-full bg-white/70"></button>
+          <button type="button" onclick="goHomeSlide(1)" class="homeDot h-2.5 w-2.5 rounded-full bg-white/40"></button>
+        </div>
+      </section>
+
+      <section id="competences" class="bg-[#F7F7F6]">
+        <div class="container py-16">
+      
+          <div class="reveal max-w-3xl">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-[color:var(--dsca-green)]/80">
+              Domaines d’intervention
+            </span>
+      
+            <h3 class="mt-3 text-2xl md:text-3xl font-semibold text-[color:var(--dsca-green)]">
+              Nos pôles de compétence
+            </h3>
+      
+            <p class="mt-4 text-[color:var(--dsca-ink)]/80">
+              Accédez à la page dédiée pour le détail des domaines et modalités d’accompagnement.
+            </p>
+          </div>
+      
+          <div class="stagger mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">
+                Accompagnement des entreprises et institutions
+              </h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">
+                Conseil stratégique, structuration, prévention des risques.
+              </p>
+            </a>
+      
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Foncier & immobilier</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Sécurisation, contentieux, actes et opérations.</p>
+            </a>
+      
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">MARD</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Médiation, arbitrage, résolution amiable.</p>
+            </a>
+      
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Mines & Pétrole</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Contrats, conformité, enjeux réglementaires.</p>
+            </a>
+      
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Conformité & gouvernance</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Procédures, éthique, dispositifs internes.</p>
+            </a>
+      
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Droit public</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Marchés, administrations, litiges publics.</p>
+            </a>
+
+            <a href="#/competences" class="section-card hover-lift group bg-white hover:shadow-md transition">
+              <div class="hbar"></div>
+              <h4 class="mt-4 font-semibold text-[color:var(--dsca-green)]">Droit des nouvelles technologies</h4>
+              <p class="mt-2 text-sm text-[color:var(--dsca-ink)]/70">Communications et médias électroniques, Protection des données, Droit spatial, Fintech.</p>
+            </a>
+          </div>
+      
+          <div class="reveal mt-10">
+            <a href="#/competences" class="btn hover-lift bg-[color:var(--dsca-green)] text-white hover:opacity-90 transition">
+              Voir toutes les compétences ➻
+            </a>
+          </div>
+      
+        </div>
+      </section>`;
+    }
+
+    
+    function Presentation() 
+    {
+      return `
+      <section class="bg-white">
+        <div class="container py-16 max-w-6xl grid lg:grid-cols-3 gap-12 items-start">
+    
+          <div class="lg:col-span-1">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5">
+              <img src="assets/halima diallo.svg" alt="Maître Halima DIALLO SAMBARE" class="h-full w-full object-cover" />
+            </div>
+    
+            <div class="mt-6 rounded-2xl border border-black/5 p-5 bg-[#F7F7F6]">
+              <p class="text-sm text-black/60 tracking-wide uppercase">Profil</p>
+              <p class="mt-2 font-semibold text-[color:var(--dsca-green)]">Avocate au Barreau du Niger</p>
+              <p class="mt-1 text-sm text-black/70">Conseil • Contentieux • MARD</p>
+            </div>
+
+            <div class="mt-6 rounded-2xl border border-black/5 p-5 bg-[#F7F7F6]">
+              <p class="text-sm text-black/60 tracking-wide uppercase">International</p>
+              <p class="mt-2 font-semibold text-[color:var(--dsca-green)]">• Membre du réseau Lexing Network</p>
+              <p class="mt-2 font-semibold text-[color:var(--dsca-green)]">• Membre de la CIB</p>
+              <p class="mt-1 text-sm text-black/70">Conférence Internationale des Barreaux</p>
+            </div>
+
+            <div style="width:100%; max-width:1200px; margin:0 auto;">
+              <iframe
+                src="https://lexing.network/global-presence/?tab=lexing"
+                width="100%"
+                height="800"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+            
+          </div>
+    
+          <div class="lg:col-span-2">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              Présentation
+            </span>
+    
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+              Une expertise reconnue, au service de dossiers stratégiques
+            </h2>
+    
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2007</p>
+                  <p class="text-sm text-black/70">Création du Cabinet SAMBARE</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2012 - 2014</p>
+                  <p class="text-sm text-black/70">Membre du Conseil de l'Ordre des Avocats du Niger</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2014 - 2016</p>
+                  <p class="text-sm text-black/70">Trésorière du Conseil de l'Ordre des Avocats du Niger</p>
+                </div>
+              </div>
+    
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2017 - 2021</p>
+                  <p class="text-sm text-black/70">Conseiller-Membre de la Cour Constitutionnelle du Niger</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2021</p>
+                  <p class="text-sm text-black/70">Rebaptisation en DIALLO & SAMBARE Cabinet d’Avocats</p>
+                </div>
+              </div>
+    
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-2.5 w-2.5 rounded-full bg-[color:var(--dsca-green)]"></div>
+                <div>
+                  <p class="text-sm font-semibold text-[color:var(--dsca-green)]">2022 - 2025</p>
+                  <p class="text-sm text-black/70">Membre du Conseil de l’Ordre des Avocats du Niger</p>
+                </div>
+              </div>
+            </div>
+    
+            <article class="mt-10 space-y-5 leading-relaxed text-[16.5px] text-black/80 text-justify">
+              <p>Maître Halima DIALLO SAMBARE, avocate au Barreau du Niger, est une professionnelle reconnue bénéficiant de plus de vingt ans d’expérience dans le conseil et l’assistance juridique et judiciaire.</p>
+    
+              <p>Depuis 2007, elle dirige le Cabinet d’Avocats SAMBARE, rebaptisé DIALLO & SAMBARE Cabinet d’Avocats en 2021. Elle est basée à Niamey, où elle accompagne aussi bien des particuliers que des institutions dans des dossiers stratégiques et complexes.</p>
+    
+              <p>Avocate-conseil de plusieurs banques, sociétés commerciales, établissements de santé et opérateurs économiques divers, elle intervient en conseil et en contentieux devant les juridictions de droit commun, ainsi que dans le cadre des modes alternatifs de règlement des différends.</p>
+    
+              <p>Elle a mené des missions d’envergure internationale, telles que la négociation de contrats complexes, la mise en place de partenariats public-privé, et l’implantation ainsi que l’accompagnement de filiales de groupes étrangers au Niger.</p>
+    
+              <p>Maître Halima DIALLO SAMBARE a également siégé à la Cour constitutionnelle de la République du Niger, une fonction prestigieuse qu’elle a exercée avec la confiance de ses pairs.</p>
+    
+              <p>Elle conjugue rigueur, expertise et ouverture internationale grâce à une collaboration active avec de prestigieux cabinets d’avocats étrangers (Afrique du Sud, Chine, France, Sénégal) et une excellente maîtrise du français, de l’anglais et de l’espagnol.</p>
+    
+              <p>Elle est également reconnue pour son éloquence et son engagement ordinal, ayant exercé plusieurs responsabilités au sein des instances représentatives de la profession.</p>
+            </article>
+          </div>
+    
+        </div>
+      </section>`;
+    }
+
+
+    function Competences() {
+      return `
+      <section class="bg-white">
+        <div class="container py-20 max-w-6xl">
+    
+          <div class="max-w-2xl">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              Expertise
+            </span>
+    
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+              Domaines de compétence
+            </h2>
+    
+            <p class="mt-4 text-black/70 text-justify">
+              Le cabinet intervient en conseil et en contentieux dans des domaines stratégiques du droit, au service des entreprises, institutions et particuliers.
+            </p>
+          </div>
+    
+          <div class="mt-12 grid lg:grid-cols-2 gap-8">
+    
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Accompagnement des entreprises et institutions
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Droit des sociétés</li>
+                <li>Contrats commerciaux et recouvrement</li>
+                <li>Contentieux civil et commercial</li>
+                <li>Droit social et sécurité sociale</li>
+                <li>Droit bancaire et financier</li>
+                <li>Droit pénal des affaires</li>
+                <li>Droit public</li>
+              </ul>
+            </div>
+    
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Foncier & Immobilier
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Litiges fonciers</li>
+                <li>Droit de l’urbanisme</li>
+                <li>Baux d’habitation et commerciaux</li>
+              </ul>
+            </div>
+    
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Modes Alternatifs de Règlement des Différends (MARD)
+              </h3>
+              <p class="mt-2 text-sm text-black/60">
+                Médiation • Arbitrage • Processus collaboratif
+              </p>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Arbitrage</li>
+                <li>Médiation</li>
+                <li>Processus collaboratif</li>
+              </ul>
+            </div>
+    
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Mines & Pétrole
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Titres miniers et pétroliers</li>
+                <li>Négociation de contrats</li>
+                <li>PPP et financement de projets</li>
+              </ul>
+            </div>
+    
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Conformité & Gouvernance
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Éthique et prévention des risques</li>
+                <li>Politiques internes et gouvernance</li>
+                <li>Formation et sensibilisation</li>
+              </ul>
+            </div>
+
+            <div class="section-card bg-[#F7F7F6]">
+              <div class="hbar"></div>
+              <h3 class="mt-4 text-lg font-semibold text-[color:var(--dsca-green)]">
+                Droit des nouvelles technologies
+              </h3>
+              <ul class="mt-4 bullet text-sm space-y-1.5 text-black/80">
+                <li>Communications et médias électroniques</li>
+                <li>Protection des données</li>
+                <li>Droit spatial</li>                
+                <li>Fintech</li>
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+      </section>`;
+    }
+
+
+    function Honoraires() 
+    {
+      return `
+      <section class="bg-[#F7F7F6]">
+        <div class="container py-20 max-w-4xl">
+      
+          <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+            Informations
+          </span>
+      
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+            Honoraires
+          </h2>
+      
+          <article class="mt-8 space-y-5 text-[16.5px] leading-relaxed text-black/80 text-justify">
+            <p>
+              Diallo & Sambare établit ses honoraires en toute transparence avec ses clients,
+              selon la nature et la difficulté de l'affaire ainsi que le temps consacré au
+              traitement du dossier.
+            </p>
+      
+            <p>
+              Dès le premier rendez-vous et après étude préliminaire du dossier, le cabinet
+              propose au client le mode de facturation le plus adapté.
+            </p>
+      
+            <p>
+              Une convention d'honoraires est systématiquement établie afin de préciser les
+              modalités de fixation et de règlement des honoraires.
+            </p>
+          </article>
+      
+          <div class="mt-12 grid md:grid-cols-2 gap-6">
+      
+            <div class="section-card bg-white">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">
+                Honoraire au temps passé
+              </h3>
+              <p class="mt-3 text-sm text-black/75 leading-relaxed text-justify">
+                Les honoraires sont calculés en fonction du temps consacré au dossier et du
+                tarif horaire de l’avocat. Un nombre prévisionnel d’heures est communiqué au
+                client, accompagné d’un décompte détaillé du temps passé.
+              </p>
+            </div>
+      
+            <div class="section-card bg-white">
+              <div class="hbar"></div>
+              <h3 class="mt-4 font-semibold text-[color:var(--dsca-green)]">
+                Honoraire au forfait
+              </h3>
+              <p class="mt-3 text-sm text-black/75 leading-relaxed text-justify">
+                Cette formule est privilégiée lorsque le dossier présente peu d’aléas,
+                permettant de convenir d’un montant global couvrant l’ensemble de la
+                procédure.
+              </p>
+            </div>
+      
+          </div>
+      
+          <p class="mt-8 text-sm text-black/60 text-justify">
+            À noter : dès l’ouverture du dossier, des frais d’ouverture peuvent être demandés
+            ainsi qu’une provision destinée à couvrir les frais d’actes et de procédures.
+          </p>
+      
+          <div class="mt-10">
+            <a href="#/contact"
+               class="inline-flex items-center rounded-2xl bg-[color:var(--dsca-green)]
+                      text-white px-7 py-3 font-medium hover:opacity-90 transition">
+              Demander un devis
+            </a>
+          </div>
+      
+        </div>
+      </section>
+      `;
+    }
+
+
+    function Contact()
+    {
+      return `
+      <section id="contact" class="bg-[#F7F7F6]">
+        <div class="container py-16 grid lg:grid-cols-2 gap-12 items-start">
+    
+          <div>
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              Contact
+            </span>
+    
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+              Parlons de votre dossier
+            </h2>
+    
+            <p class="mt-4 text-black/70 max-w-prose leading-relaxed">
+              Nous vous répondons dans les meilleurs délais. Pour toute urgence, privilégiez l’appel téléphonique.
+            </p>
+    
+            <div class="mt-8 rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+              <div class="grid gap-3 text-sm">
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5"></span>
+                  <div>
+                    <p class="font-medium text-black/80">Téléphone</p>
+                    <p class="text-black/70">+227 20 35 35 09</p>
+                  </div>
+                </div>
+    
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5"></span>
+                  <div>
+                    <p class="font-medium text-black/80">E-mail</p>
+                    <p class="text-black/70">contact@diallo-sambare.com</p>
+                  </div>
+                </div>
+    
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5"></span>
+                  <div>
+                    <p class="font-medium text-black/80">Site</p>
+                    <a class="underline underline-offset-4 text-black/70 hover:text-black transition"
+                       href="https://www.cabinet-sambare.com" target="_blank" rel="noopener">
+                      www.cabinet-sambare.com
+                    </a>
+                  </div>
+                </div>
+    
+                <div class="flex items-start gap-3">
+                  <span class="mt-0.5"></span>
+                  <div>
+                    <p class="font-medium text-black/80">Adresse</p>
+                    <p class="text-black/70">BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="mt-5">
+                <a href="https://maps.app.goo.gl/T9ZWvvey6t8V4Zt88"
+                   target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 rounded-xl px-4 py-2
+                          bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)]
+                          text-sm shadow-sm hover:opacity-90 transition">
+                  Ouvrir dans Google Maps
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+    
+          <div>
+            <div class="rounded-2xl border border-black/5 bg-white p-6 md:p-8 shadow-sm">
+              <h3 class="text-xl md:text-2xl font-semibold text-[color:var(--dsca-green)]">
+                Écrivez-nous
+              </h3>
+              <p class="mt-2 text-sm text-black/60">
+                Les informations transmises restent strictement confidentielles.
+              </p>
+    
+              <form id="contactForm"
+                    action="https://formspree.io/f/mgvgqdpl"
+                    method="POST"
+                    class="grid grid-cols-1 gap-4 mt-6">
+    
+                <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <label class="sr-only" for="name">Nom et prénom</label>
+                  <input id="name" name="name" required
+                         class="rounded-xl border border-black/10 bg-white px-4 py-3
+                                placeholder:text-black/40 focus:outline-none focus:ring-4
+                                focus:ring-[color:var(--dsca-peach)]/40"
+                         placeholder="Nom et prénom" />
+    
+                  <label class="sr-only" for="email">E-mail</label>
+                  <input id="email" name="email" type="email" required
+                         class="rounded-xl border border-black/10 bg-white px-4 py-3
+                                placeholder:text-black/40 focus:outline-none focus:ring-4
+                                focus:ring-[color:var(--dsca-peach)]/40"
+                         placeholder="E-mail" />
+                </div>
+    
+                <label class="sr-only" for="phone">Téléphone</label>
+                <input id="phone" name="phone"
+                       class="rounded-xl border border-black/10 bg-white px-4 py-3
+                              placeholder:text-black/40 focus:outline-none focus:ring-4
+                              focus:ring-[color:var(--dsca-peach)]/40"
+                       placeholder="Téléphone (optionnel)" />
+    
+                <label class="sr-only" for="message">Votre message</label>
+                <textarea id="message" name="message" required
+                          class="rounded-2xl border border-black/10 bg-white px-4 py-3 min-h-[140px]
+                                 placeholder:text-black/40 focus:outline-none focus:ring-4
+                                 focus:ring-[color:var(--dsca-peach)]/40"
+                          placeholder="Décrivez brièvement votre besoin (contexte, objectif, délais)"></textarea>
+    
+                <input type="hidden" name="_subject" value="Nouveau message - diallo-sambare.com" />
+                <input type="hidden" name="site" value="https://www.diallo-sambare.com" />
+    
+                <button class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-95 transition">
+                  Envoyer la demande
+                </button>
+    
+                <p id="formMsg" class="text-sm"></p>
+    
+                <p class="text-xs text-black/60 leading-relaxed">
+                  En soumettant ce formulaire, vous acceptez d’être recontacté(e) par le cabinet.
+                </p>
+              </form>
+            </div>
+          </div>
+    
+        </div>
+      </section>`;
+    }
+
+    function RDV()
+    {
+      return `
+      <section class="bg-white" id="rdv">
+        <div class="container py-16 max-w-3xl">
+    
+          <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+            Rendez-vous
+          </span>
+    
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+            Prendre rendez-vous
+          </h2>
+    
+          <p class="mt-4 text-black/70 leading-relaxed text-justify">
+            Ce formulaire ouvre une invitation Outlook adressée à
+            <span class="font-medium text-black/80">contact@diallo-sambare.com</span> et à votre e-mail.
+          </p>
+    
+          <div class="mt-8 section-card bg-[#F7F7F6]">
+            <form id="rdvForm" class="grid gap-4">
+    
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input id="rv_name" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]"
+                       placeholder="Nom et prénom" />
+    
+                <input id="rv_email" type="email" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]"
+                       placeholder="Votre e-mail" />
+              </div>
+    
+              <div class="grid sm:grid-cols-3 gap-4">
+                <input id="rv_date" type="date" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]" />
+    
+                <input id="rv_time" type="time" required
+                       class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]" />
+    
+                <select id="rv_mode"
+                        class="rounded-xl border border-black/10 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-[color:var(--dsca-peach)]">
+                  <option value="physique">Physique (au cabinet)</option>
+                  <option value="visio">Visio (Microsoft Teams)</option>
+                </select>
+              </div>
+    
+              <button class="btn bg-[color:var(--dsca-green)] text-white hover:opacity-90 transition" type="submit">
+                Ouvrir dans Outlook
+              </button>
+    
+              <p class="text-xs text-black/60">
+                Aucune réservation n’est finalisée sans confirmation du cabinet.
+              </p>
+            </form>
+          </div>
+    
+        </div>
+      </section>`;
+    }
+
+
+    function Partenaires()
+    {
+      return `
+      <section class="bg-white">
+        <div class="container py-20 max-w-6xl">
+
+          <div class="max-w-2xl">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              Réseau
+            </span>
+
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+              Nos partenaires
+            </h2>
+
+            <p class="mt-4 text-black/70">
+              Le cabinet collabore avec des partenaires de confiance en Afrique et à l'international.
+            </p>
+          </div>
+
+          <!-- LEXING NETWORK -->
+          <div class="mt-12 section-card bg-[#F7F7F6] reveal">
+            <div class="hbar"></div>
+            <div class="mt-6 flex flex-col md:flex-row md:items-center gap-8">
+
+              <div class="flex-1 space-y-4 text-black/80 leading-relaxed text-justify">
+                <p>
+                  Le cabinet est membre du réseau international
+                  <span class="font-semibold text-[color:var(--dsca-green)]">Lexing Network</span>,
+                  premier réseau mondial d'avocats spécialisés en droit du numérique et des technologies.
+                </p>
+                <p class="text-sm text-black/60">
+                  Ce réseau regroupe des cabinets indépendants dans plus de 60 pays, permettant à DIALLO & SAMBARE
+                  d'accompagner ses clients dans leurs enjeux juridiques transfrontaliers liés au numérique.
+                </p>
+                <a href="https://lexing.network/avocat/halima-diallo/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 rounded-xl px-4 py-2
+                          bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)]
+                          text-sm font-medium shadow-sm hover:opacity-90 transition">
+                  Voir le profil sur Lexing Network ↗
+                </a>
+              </div>
+
+              <div class="flex-shrink-0 flex justify-center">
+                <a href="https://lexing.network/avocat/halima-diallo/" target="_blank" rel="noopener">
+                  <img src="/assets/logo-lexing-network.png"
+                       alt="Membre du réseau Lexing Network"
+                       class="h-20 opacity-95 hover:opacity-100 transition hover:scale-105" />
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Carte mondiale du réseau -->
+            <div class="mt-8 rounded-xl overflow-hidden border border-black/5">
+              <iframe
+                src="https://lexing.network/global-presence/?tab=lexing"
+                width="100%"
+                height="500"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- PARTENAIRES INTERNATIONAUX -->
+          <div class="mt-16">
+            <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+              International
+            </span>
+            <h3 class="mt-2 text-2xl font-semibold text-[color:var(--dsca-green)]">
+              Avocats partenaires
+            </h3>
+
+            <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+              <!-- RSDA / Xavier-Jean Keïta -->
+              <div class="reveal section-card bg-[#F7F7F6] hover-lift flex flex-col gap-4">
+
+                <div class="h-36 rounded-xl bg-white flex items-center justify-center p-4 border border-black/5">
+                  <img src="assets/rsda-avocats-paris-logo.webp"
+                       alt="Logo RSDA"
+                       class="max-h-full max-w-full object-contain" />
+                </div>
+
+                <div>
+                  <p class="font-semibold text-[color:var(--dsca-green)] text-base">
+                    RSDA
+                  </p>
+                  <p class="mt-1 text-xs text-black/50 tracking-wide uppercase">
+                    Paris &amp; Kigali
+                  </p>
+                </div>
+
+                <div class="mt-auto text-sm">
+                  <a href="https://www.rsda.eu/" target="_blank" rel="noopener"
+                     class="inline-flex items-center gap-1 text-[color:var(--dsca-green)] hover:underline underline-offset-4 transition">
+                    Site du cabinet ↗
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>`;
+    }
+
+
+    function CGU()
+    {
+      return `
+    <section class="bg-white">
+      <div class="container py-16 max-w-4xl">
+    
+        <span class="inline-block text-[0.7rem] tracking-[0.25em] uppercase text-black/60">
+          Informations légales
+        </span>
+    
+        <h2 class="mt-3 text-3xl md:text-4xl font-semibold text-[color:var(--dsca-green)]">
+          Conditions Générales d’Utilisation (CGU)
+        </h2>
+    
+        <p class="mt-2 text-sm text-black/70">
+          <b>Site :</b> www.diallo-sambare.com
+        </p>
+    
+        <div class="mt-10 space-y-8 leading-relaxed text-[15.5px] text-black/80 text-justify">
+    
+          <!-- 1. Objet -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">1. Objet</h3>
+            <p class="mt-2">
+              Les présentes Conditions Générales d’Utilisation (ci-après « CGU ») ont pour objet
+              de définir les modalités d’accès et d’utilisation du site www.diallo-sambare.com,
+              édité par DIALLO & SAMBARE Cabinet d’Avocats, ainsi que les droits et obligations
+              des utilisateurs.
+            </p>
+            <p class="mt-2">
+              En accédant et en utilisant le site www.diallo-sambare.com, l’utilisateur accepte
+              sans réserve les présentes CGU.
+            </p>
+          </section>
+    
+          <!-- 2. Définitions -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">2. Définitions</h3>
+            <p class="mt-2">
+              Conformément à la Loi n°2022-59 du 16 décembre 2022 relative à la protection des
+              données à caractère personnel :
+            </p>
+            <ul class="mt-2 list-disc pl-6 space-y-1">
+              <li>« Données à caractère personnel » : toute information se rapportant à une personne physique identifiée ou identifiable.</li>
+              <li>« Responsable du traitement » : DIALLO & SAMBARE Cabinet d’Avocats.</li>
+              <li>« Sous-traitant » : toute personne traitant des données pour le compte du responsable.</li>
+              <li>« Personne concernée » : l’utilisateur dont les données sont collectées.</li>
+            </ul>
+          </section>
+    
+          <!-- 3. Accès -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">3. Accès au site</h3>
+            <p class="mt-2">
+              Le site www.diallo-sambare.com est accessible gratuitement, sous réserve des frais
+              de connexion à Internet supportés par l’utilisateur.
+            </p>
+            <p class="mt-2">
+              L’éditeur se réserve le droit de suspendre ou restreindre l’accès au site en cas
+              de non-respect des présentes CGU.
+            </p>
+          </section>
+    
+          <!-- 4. Données personnelles -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">4. Données personnelles</h3>
+    
+            <p class="mt-2 font-medium">4.1 Responsable du traitement</p>
+            <p class="mt-2">
+              DIALLO & SAMBARE Cabinet d’Avocats<br/>
+              BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001<br/>
+              Email : <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>
+            </p>
+    
+            <p class="mt-4 font-medium">4.2 Données collectées</p>
+            <p class="mt-2">
+              Nom et prénom, coordonnées postales, adresse électronique, numéro de téléphone,
+              fournis volontairement par l’utilisateur via les formulaires du site.
+            </p>
+    
+            <p class="mt-4 font-medium">4.3 Finalités</p>
+            <p class="mt-2">
+              Réponse aux demandes, mise en relation avec le Cabinet, suivi administratif et
+              juridique, amélioration des services.
+            </p>
+    
+            <p class="mt-4 font-medium">4.4 Base légale</p>
+            <p class="mt-2">
+              Consentement de l’utilisateur, exécution d’un service demandé, intérêt légitime
+              du Cabinet.
+            </p>
+    
+            <p class="mt-4 font-medium">4.5 Droits des utilisateurs</p>
+            <p class="mt-2">
+              Droit d’accès, de rectification, d’opposition, d’effacement, de limitation et de
+              portabilité, à exercer par email à
+              <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.
+            </p>
+    
+            <p class="mt-4 font-medium">4.6 Conservation</p>
+            <p class="mt-2">
+              Les données sont conservées pendant la durée strictement nécessaire aux finalités
+              poursuivies, sauf obligation légale.
+            </p>
+    
+            <p class="mt-4 font-medium">4.7 Sécurité</p>
+            <p class="mt-2">
+              Des mesures techniques et organisationnelles appropriées sont mises en œuvre pour
+              garantir la sécurité et la confidentialité des données.
+            </p>
+    
+            <p class="mt-4 font-medium">4.8 Autorité de contrôle</p>
+            <p class="mt-2">
+              L’utilisateur peut saisir la Haute Autorité de Protection des Données à caractère
+              Personnel (HAPDP) du Niger.
+            </p>
+          </section>
+    
+          <!-- 5. Propriété intellectuelle -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">5. Propriété intellectuelle</h3>
+            <p class="mt-2">
+              L’ensemble des contenus du site est protégé par le droit d’auteur et demeure la
+              propriété exclusive de DIALLO & SAMBARE Cabinet d’Avocats.
+            </p>
+          </section>
+    
+          <!-- 6. Obligations -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">6. Obligations des utilisateurs</h3>
+            <p class="mt-2">
+              L’utilisateur s’engage à respecter la législation en vigueur, à ne pas utiliser
+              le site à des fins illicites et à fournir des informations exactes.
+            </p>
+          </section>
+    
+          <!-- 7. Responsabilité -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">7. Responsabilité</h3>
+            <p class="mt-2">
+              Le Cabinet ne saurait être tenu responsable en cas de dysfonctionnement technique,
+              d’usage inapproprié ou d’attaque informatique indépendante de sa volonté.
+            </p>
+          </section>
+    
+          <!-- 8. Modification -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">8. Modification des CGU</h3>
+            <p class="mt-2">
+              Les présentes CGU peuvent être modifiées à tout moment. Les utilisateurs sont
+              invités à les consulter régulièrement.
+            </p>
+          </section>
+    
+          <!-- 9. Loi applicable -->
+          <section>
+            <h3 class="text-xl font-semibold text-[color:var(--dsca-green)]">9. Loi applicable et réclamations</h3>
+            <p class="mt-2">
+              Les CGU sont régies par la législation de la République du Niger.
+            </p>
+            <p class="mt-2">
+              Toute réclamation devra être adressée à
+              <a href="mailto:contact@diallo-sambare.com" class="underline">contact@diallo-sambare.com</a>.
+            </p>
+          </section>
+    
+        </div>
+      </div>
+    </section>
+    `;
+    }
+
+
+    function render() {
+      const r = route();
+    
+      if (r==='/' || r.startsWith('/#')) mount(Home());
+      else if (r==='/presentation') mount(Presentation());
+      else if (r==='/competences') mount(Competences());
+      else if (r==='/honoraires') mount(Honoraires());
+      else if (r.startsWith('/contact')) { 
+        mount(Contact()); 
+        setTimeout(bindContactForm, 0); 
+      }
+      else if (r.startsWith('/rdv')) { 
+        mount(RDV()); 
+        setTimeout(bindRDVForm, 0); 
+      }
+      else if (r==='/partenaires') mount(Partenaires());
+      else if (r==='/cgu') mount(CGU());
+      else mount(Home());
+    
+      // IMPORTANT: relancer animations & slider après injection HTML
+      setTimeout(afterRender, 0);
+    }
+
+
+    
+    function bindContactForm()
+    {
+      const form = document.getElementById('contactForm');
+      if(!form) return;
+  
+      const msg = document.getElementById('formMsg');
+      const FORM_ID = 'mgvgqdpl';
+  
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msg.textContent = 'Envoi…';
+        msg.className = 'text-sm';
+  
+        try {
+          const res = await fetch('https://formspree.io/f/' + FORM_ID, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+  
+          if (res.ok) {
+            msg.textContent = 'Merci, votre message a bien été envoyé.';
+            msg.className = 'text-sm text-green-700';
+            form.reset();
+          } else {
+            const data = await res.json().catch(() => null);
+            msg.textContent = data?.error || 'Une erreur est survenue.';
+            msg.className = 'text-sm text-red-700';
+          }
+        } catch (err) {
+          form.submit(); // fallback HTML
+        }
+      });
+    }
+
+    
+    function toISOUTC(d)
+    {
+      const p = n => String(n).padStart(2,'0');
+      return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':00Z';
+    }
+
+    function bindRDVForm()
+    {
+      const form = document.getElementById('rdvForm');
+      if(!form) return;
+  
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const email = document.getElementById('rv_email').value.trim();
+        const date = document.getElementById('rv_date').value;
+        const time = document.getElementById('rv_time').value;
+        const mode = document.getElementById('rv_mode').value;
+        if(!email || !date || !time) return;
+  
+        const [Y,M,D] = date.split('-').map(Number);
+        const [hh,mm] = time.split(':').map(Number);
+        const start = new Date(Y, M-1, D, hh, mm);
+        const end = new Date(start.getTime() + 60*60000);
+  
+        const subject = encodeURIComponent('Rendez-vous - DIALLO & SAMBARE');
+        const body = encodeURIComponent(`Email: ${email}\nMode: ${mode==='visio'?'Visio (Teams)':'Physique'}`);
+        const location = encodeURIComponent(mode==='visio' ? 'Microsoft Teams' : 'Cabinet - BP 12 805 ; Rue 012 cité Stin, Yantala, Niamey 08001');
+        const attendees = encodeURIComponent('contact@diallo-sambare.com,'+email);
+  
+        const url = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent'
+          + '&subject=' + subject
+          + '&startdt=' + encodeURIComponent(toISOUTC(start))
+          + '&enddt=' + encodeURIComponent(toISOUTC(end))
+          + '&body=' + body
+          + '&location=' + location
+          + '&to=' + attendees;
+  
+        window.open(url, '_blank');
+      });
+    }
+  
+      
+    window.addEventListener('hashchange', render);
+    render();
+  
+      
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+  
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+  
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+
+    document.documentElement.classList.add('js');
+    
+    let revealObserver = null;
+    
+    function initReveals() 
+    {
+      // déconnecte l’ancien observer (important en SPA)
+      if (revealObserver) revealObserver.disconnect();
+    
+      const revealEls = document.querySelectorAll('.reveal');
+    
+      // fallback si IntersectionObserver n’existe pas
+      if (!('IntersectionObserver' in window)) {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+    
+      revealObserver = new IntersectionObserver((entries) => 
+        {
+        entries.forEach(e => 
+          {
+          if (e.isIntersecting) 
+            {
+              e.target.classList.add('is-visible');
+              revealObserver.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    
+      revealEls.forEach(el => revealObserver.observe(el));
+    }
+    
+    function revealWipes() {
+      document.querySelectorAll('.wipe').forEach(el => el.classList.add('is-visible'));
+    }
+
+
+    let homeSlideIndex = 0;
+  
+    function updateHomeSlider() {
+      const slider = document.getElementById('homeSlider');
+      if (!slider) return;
+    
+      slider.style.transform = `translateX(-${homeSlideIndex * 100}%)`;
+    
+      const dots = document.querySelectorAll('.homeDot');
+      dots.forEach((d,i)=>{
+        d.classList.toggle('bg-white/70', i === homeSlideIndex);
+        d.classList.toggle('bg-white/40', i !== homeSlideIndex);
+      });
+    
+      revealWipes();
+      initReveals();
+    }
+
+  
+    function nextHomeSlide()
+    {
+      homeSlideIndex = (homeSlideIndex + 1) % 2;
+      updateHomeSlider();
+    }
+    
+    function prevHomeSlide()
+    {
+      homeSlideIndex = (homeSlideIndex - 1 + 2) % 2;
+      updateHomeSlider();
+    }
+    
+    function goHomeSlide(i)
+    {
+      homeSlideIndex = i;
+      updateHomeSlider();
+    }
+
+    document.documentElement.classList.add('js');
+
+    // force reveal wipe au chargement (et après chaque slide)
+    function revealWipes()
+    {
+      document.querySelectorAll('.wipe').forEach(el => el.classList.add('is-visible'));
+    }
+  
+    window.addEventListener('load', () => setTimeout(afterRender, 0));
+
+    function afterRender() 
+    {
+      // si home slider existe, on le reset proprement
+      const slider = document.getElementById('homeSlider');
+      if (slider) 
+      {
+        homeSlideIndex = 0;
+        updateHomeSlider();
+      }
+    
+      // animations
+      initReveals();
+      revealWipes();
+    }
+
+    
+</script>
+</body>  
+</html>
+
