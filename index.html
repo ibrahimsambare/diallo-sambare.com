@@ -1542,8 +1542,58 @@
       revealWipes();
     }
 
-    
+
+    // ── COOKIE CONSENT ──────────────────────────────────────────
+    (function() {
+      if (localStorage.getItem('dsca_cookies_accepted')) return;
+
+      const banner = document.createElement('div');
+      banner.id = 'cookieBanner';
+      banner.innerHTML = `
+        <div class="fixed bottom-0 left-0 right-0 z-50
+                    bg-[color:var(--dsca-green)] text-white
+                    shadow-2xl border-t border-white/10">
+          <div class="container py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <p class="text-sm text-white/85 leading-relaxed flex-1">
+              Ce site utilise des cookies pour améliorer votre expérience. En continuant votre navigation,
+              vous acceptez notre
+              <a href="#/cgu" class="underline underline-offset-4 hover:text-white transition">
+                politique d'utilisation
+              </a>
+              et nos CGU.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+              <button id="cookieAccept"
+                      class="rounded-full px-5 py-2 text-sm font-medium
+                             bg-[color:var(--dsca-peach)] text-[color:var(--dsca-ink)]
+                             hover:opacity-90 transition">
+                Accepter
+              </button>
+              <button id="cookieDecline"
+                      class="rounded-full px-5 py-2 text-sm font-medium
+                             border border-white/40 text-white
+                             hover:bg-white/10 transition">
+                Refuser
+              </button>
+            </div>
+          </div>
+        </div>`;
+
+      document.body.appendChild(banner);
+
+      document.getElementById('cookieAccept').addEventListener('click', function() {
+        localStorage.setItem('dsca_cookies_accepted', '1');
+        banner.remove();
+      });
+
+      document.getElementById('cookieDecline').addEventListener('click', function() {
+        localStorage.setItem('dsca_cookies_accepted', '0');
+        banner.remove();
+      });
+    })();
+
+
 </script>
-</body>  
+</body>
 </html>
 
